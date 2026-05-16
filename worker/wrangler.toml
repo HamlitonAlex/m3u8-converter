@@ -1,0 +1,7 @@
+name = "m3u8-proxy"
+main = "worker.js"
+compatibility_date = "2026-05-15"
+
+[[routes]]
+pattern = "m3u8tomp4.com.cn/proxy/*"
+zone_name = "m3u8tomp4.com.cn"

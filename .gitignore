@@ -1,0 +1,8 @@
+node_modules/
+fc-proxy/
+fc-proxy.zip
+.DS_Store
+*.log
+.wrangler/
+.idea/
+*.code-workspace

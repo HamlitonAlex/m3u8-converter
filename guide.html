@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="教你如何找到 M3U8 链接——使用浏览器开发者工具（F12）提取任何视频网站的 M3U8 地址，Chrome/Firefox/Edge 通用教程。">
+  <meta name="keywords" content="找M3U8链接, 提取M3U8, 获取HLS地址, 开发者工具M3U8, 下载M3U8">
+  <meta name="robots" content="index, follow">
+  <title>如何找到 M3U8 链接 — 完整教程 | M3U8转换</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3PwcUWLRlOTQ9dMa",ck:"3PwcUWLRlOTQ9dMa"})</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px">
+      <polygon points="23 7 16 12 23 17 23 7"/>
+      <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+    </svg>
+    M3U8转换
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">首页</a></li>
+    <li><a href="convert.html">在线转换</a></li>
+    <li><a href="guide.html">使用教程</a></li>
+    <li><a href="about.html">关于</a></li>
+    <li><a href="contact.html">联系</a></li>
+  </ul>
+</nav>
+
+<main class="content-page container">
+  <h1>如何找到 M3U8 链接 — 完整教程</h1>
+  <p>M3U8 链接是下载流媒体视频的钥匙。这篇教程教你用浏览器自带的开发者工具找到它，无需安装任何额外软件。</p>
+
+  <h2>什么是 M3U8 链接？</h2>
+  <p>M3U8 链接是以 <code>.m3u8</code> 结尾的网络地址，指向一个 HLS 播放列表。这个播放列表告诉播放器视频分片段在哪里。大多数流媒体网站都使用 HLS 技术，找到了 M3U8 链接，就找到了完整的视频。</p>
+  <p>典型格式：<code>https://example.com/videos/stream_720p.m3u8</code></p>
+
+  <h2>方法一：Chrome 开发者工具（推荐）</h2>
+  <ol>
+    <li>打开视频页面，<strong>开始播放视频</strong></li>
+    <li>按 <strong>F12</strong>（或 Ctrl+Shift+I）打开开发者工具</li>
+    <li>点击顶部的 <strong>Network（网络）</strong>选项卡</li>
+    <li>在搜索框中输入 <strong>m3u8</strong></li>
+    <li>刷新页面，重新播放视频——会看到 <code>.m3u8</code> 文件出现在列表中</li>
+    <li><strong>右键点击</strong>该条目 → <strong>Copy → Copy link address</strong></li>
+    <li>将链接粘贴到我们的<a href="convert.html">转换工具</a>中</li>
+  </ol>
+  <p><strong>提示：</strong>如果看到多个 .m3u8 文件，选含数字如 720、1080 的那个——那是具体分辨率的子播放列表。</p>
+
+  <h2>方法二：Firefox 开发者工具</h2>
+  <ol>
+    <li>打开视频页面，<strong>开始播放</strong></li>
+    <li>按 <strong>F12</strong></li>
+    <li>点击 <strong>Network（网络）</strong>选项卡</li>
+    <li>搜索框输入 <strong>m3u8</strong></li>
+    <li>刷新页面，M3U8 地址会出现在列表中</li>
+    <li>右键链接 → <strong>Copy → Copy URL</strong></li>
+  </ol>
+
+  <h2>方法三：Edge 浏览器</h2>
+  <ol>
+    <li>打开页面并播放视频</li>
+    <li>按 <strong>F12</strong> 或 Ctrl+Shift+I</li>
+    <li>进入 <strong>Network（网络）</strong>选项卡</li>
+    <li>搜索 <strong>m3u8</strong></li>
+    <li>找到 .m3u8 条目，右键复制链接地址</li>
+  </ol>
+
+  <h2>常见问题</h2>
+
+  <div class="faq" style="padding:0">
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        网络选项卡中没有出现 .m3u8 文件
+        <span>▾</span>
+      </div>
+      <div class="faq-a">
+        <p>试试这些方法：</p>
+        <ul>
+          <li>确保视频<strong>正在播放</strong>——暂停状态可能不会发起新请求</li>
+          <li>清空网络列表后<strong>刷新页面</strong>重新播放</li>
+          <li>搜索 <strong>.ts</strong> 代替——视频分片文件，观察其请求规律推测 M3U8 地址</li>
+          <li>部分网站使用 DRM 加密保护——这类视频无法转换</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        看到的是"主播放列表"——该用哪个？
+        <span>▾</span>
+      </div>
+      <div class="faq-a">主播放列表包含多个清晰度的链接。你需要<strong>子播放列表</strong>（某个具体分辨率的链接）。找含数字如 720、1080、480 的地址。不确定的话，逐个尝试——我们的工具会自动识别。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        M3U8 链接失效或过期了
+        <span>▾</span>
+      </div>
+      <div class="faq-a">有些网站使用<strong>时效性令牌</strong>——M3U8 链接只有几分钟有效期。复制链接后需要立即使用。如果返回"403 Forbidden"或空白内容，说明链接已过期。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        DRM 加密的视频能转吗？
+        <span>▾</span>
+      </div>
+      <div class="faq-a"><strong>不能。</strong>DRM 加密视频（如 Netflix、Disney+、爱奇艺等）无法转换。本工具仅适用于标准的、未加密的 HLS 流。绕过 DRM 在大多数地区属于违法行为。</div>
+    </div>
+  </div>
+
+  <h2>准备开始？</h2>
+  <p>有了 M3U8 链接，去<a href="convert.html"><strong>转换工具</strong></a>粘贴即可下载 MP4。</p>
+</main>
+
+<footer class="footer">
+  <ul class="footer-links">
+    <li><a href="about.html">关于</a></li>
+    <li><a href="privacy.html">隐私政策</a></li>
+    <li><a href="terms.html">使用条款</a></li>
+    <li><a href="contact.html">联系我们</a></li>
+  </ul>
+  <p>&copy; 2026 M3U8转换. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

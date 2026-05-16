@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="详细的 FFmpeg TS 转 MP4 教程，从下载安装到批量转换，图文并茂，新手也能学会。无损秒转，不重新编码。">
+  <meta name="keywords" content="TS转MP4, ffmpeg教程, 视频格式转换, TS格式, MP4转换, 无损转换">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://m3u8tomp4.com.cn/blog/ts-to-mp4.html">
+  <title>TS 转 MP4 完整教程（FFmpeg 无损转换） | M3U8在线工具</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3PwcUWLRlOTQ9dMa",ck:"3PwcUWLRlOTQ9dMa"})</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+    M3U8在线
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">首页</a></li>
+    <li><a href="/convert.html">在线转换</a></li>
+    <li><a href="/guide.html">教程</a></li>
+    <li><a href="/about.html">关于</a></li>
+  </ul>
+</nav>
+
+<main class="content-page container">
+  <h1>TS 转 MP4 完整教程（FFmpeg 无损转换）</h1>
+  <p style="color:var(--text-secondary)">发布：2026年5月 &nbsp;|&nbsp; 适用：Windows / Mac / Linux</p>
+
+  <h2>为什么要转换 TS 到 MP4？</h2>
+  <p>TS（MPEG-TS）是流媒体常用的容器格式，但并非所有播放器都支持。MP4 是通用性最强的视频格式，手机、电脑、电视都能直接播放。将 TS 转为 MP4 可以：</p>
+  <ul>
+    <li>在 iPhone/Android 手机上直接播放</li>
+    <li>导入视频编辑软件（PR、剪映等）</li>
+    <li>上传到视频平台（B站、YouTube）</li>
+    <li>发送给朋友，对方不需要装特殊播放器</li>
+  </ul>
+
+  <h2>安装 FFmpeg</h2>
+  <h3>Windows</h3>
+  <ol>
+    <li>打开 <a href="https://ffmpeg.org/download.html" target="_blank">FFmpeg 官网下载页</a></li>
+    <li>找到 Windows 部分，选择 <strong>Windows builds from gyan.dev</strong></li>
+    <li>下载 <code>ffmpeg-release-full.7z</code>（推荐用 7-Zip 解压）</li>
+    <li>解压后得到 <code>ffmpeg-x.x.x-full_build</code> 文件夹</li>
+    <li>进入 <code>bin</code> 目录，找到 <code>ffmpeg.exe</code></li>
+    <li>将 <code>bin</code> 目录添加到系统 PATH（或直接在该目录打开命令行）</li>
+  </ol>
+
+  <h3>Mac</h3>
+  <p>打开终端，使用 Homebrew 安装：<br><code>brew install ffmpeg</code></p>
+
+  <h3>Linux</h3>
+  <p><code>sudo apt install ffmpeg</code>（Ubuntu/Debian）<br><code>sudo yum install ffmpeg</code>（CentOS）</p>
+
+  <h2>基本转换命令</h2>
+  <p>打开命令行（Windows：在文件所在目录的地址栏输入 <code>cmd</code> 回车），执行：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i "视频文件.ts" -c copy -bsf:a aac_adtstoasc "输出文件.mp4"</code></pre>
+  <p><strong>参数说明：</strong></p>
+  <ul>
+    <li><code>-i</code>：指定输入文件</li>
+    <li><code>-c copy</code>：<strong>复制编码不重新压缩</strong>，无损且极快（10 秒内完成）</li>
+    <li><code>-bsf:a aac_adtstoasc</code>：将 AAC 音频从 ADTS 格式转为 MP4 兼容的 ASC 格式</li>
+  </ul>
+
+  <h2>批量转换多个 TS 文件</h2>
+  <p>Windows 批处理（将以下内容保存为 <code>convert.bat</code> 放在视频文件夹内）：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>for %%f in (*.ts) do ffmpeg -i "%%f" -c copy -bsf:a aac_adtstoasc "%%~nf.mp4"</code></pre>
+
+  <p>Mac / Linux：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>for f in *.ts; do ffmpeg -i "$f" -c copy -bsf:a aac_adtstoasc "${f%.ts}.mp4"; done</code></pre>
+
+  <h2>常见问题</h2>
+  <h3>转换后视频没声音？</h3>
+  <p>检查 <code>-bsf:a aac_adtstoasc</code> 参数是否遗漏。这个参数负责正确处理 AAC 音频。</p>
+
+  <h3>视频时长显示不对？</h3>
+  <p>TS 拼接可能导致时间戳异常。添加 <code>-fflags +genpts</code> 重新生成时间戳：<br><code>ffmpeg -fflags +genpts -i input.ts -c copy output.mp4</code></p>
+
+  <h3>转换速度太慢？</h3>
+  <p>确保用了 <code>-c copy</code>（无损复制，几秒完成）。如果去掉这个参数，FFmpeg 会重新编码，慢几十倍。</p>
+
+  <h2>视频教程推荐</h2>
+  <p>如果觉得命令行太复杂，也可以使用图形界面工具：</p>
+  <ul>
+    <li><strong>HandBrake</strong>（免费开源，支持 TS→MP4）</li>
+    <li><strong>格式工厂</strong>（免费，中文界面）</li>
+    <li><strong>Shutter Encoder</strong>（免费，基于 FFmpeg 的图形界面）</li>
+  </ul>
+  <p>但 FFmpeg 命令行是最快、最灵活的方式，学会后一劳永逸。</p>
+
+  <p style="margin-top:32px"><a href="/convert.html"><strong>回到在线工具 →</strong></a></p>
+</main>
+
+<footer class="footer">
+  <ul class="footer-links">
+    <li><a href="/about.html">关于</a></li>
+    <li><a href="/privacy.html">隐私政策</a></li>
+    <li><a href="/terms.html">使用条款</a></li>
+    <li><a href="/contact.html">联系我们</a></li>
+  </ul>
+  <p>© 2026 M3U8在线工具</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "TS 转 MP4 完整教程（FFmpeg 无损转换）",
+  "description": "详细的 FFmpeg TS 转 MP4 教程，从安装到批量转换，无损秒转。",
+  "datePublished": "2026-05-16",
+  "author": {"@type": "Organization", "name": "M3U8在线工具"}
+}
+</script>
+</body>
+</html>

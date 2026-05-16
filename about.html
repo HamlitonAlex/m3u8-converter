@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="关于 M3U8转换 —— 免费在线 M3U8 转 MP4 工具，浏览器本地处理，安全无忧。">
+  <meta name="robots" content="index, follow">
+  <title>关于我们 — M3U8转换</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3PwcUWLRlOTQ9dMa",ck:"3PwcUWLRlOTQ9dMa"})</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px">
+      <polygon points="23 7 16 12 23 17 23 7"/>
+      <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+    </svg>
+    M3U8转换
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">首页</a></li>
+    <li><a href="convert.html">在线转换</a></li>
+    <li><a href="guide.html">使用教程</a></li>
+    <li><a href="about.html">关于</a></li>
+    <li><a href="contact.html">联系</a></li>
+  </ul>
+</nav>
+
+<main class="content-page container">
+  <h1>关于我们</h1>
+
+  <h2>我们的使命</h2>
+  <p>我们打造了这款免费 M3U8 转 MP4 工具，让视频格式转换变得简单、快捷、无需安装任何软件。只需粘贴链接，就能获得 MP4 文件。</p>
+
+  <h2>为什么做这个</h2>
+  <p>M3U8（HLS）是互联网上最常用的流媒体格式之一，几乎所有视频网站都在使用。但普通播放器无法直接播放 M3U8 文件，而且市面上大多数转换工具都需要安装复杂的软件。</p>
+  <p>我们利用 WebAssembly 技术，把完整的视频处理引擎搬到了浏览器里。不需要上传文件、不需要服务器处理，一切都在你的设备上完成。</p>
+
+  <h2>原理</h2>
+  <p>我们的转换器使用的是 <strong>FFmpeg</strong>——业界标准的视频处理库，通过编译为 WebAssembly 在浏览器中运行：</p>
+  <ol>
+    <li>获取并解析 M3U8 播放列表，找到所有视频分片</li>
+    <li>通过代理下载每个 .ts 分片文件</li>
+    <li>FFmpeg 将所有分片合并为一个完整的 MP4 文件</li>
+    <li>MP4 文件准备好供下载——全程在你的设备上完成</li>
+  </ol>
+
+  <h2>隐私至上</h2>
+  <p><strong>你的视频文件不会离开你的设备。</strong>和很多"在线转换器"不同，我们的工具完全在浏览器本地处理。这意味着：</p>
+  <ul>
+    <li>没有文件上传——数据始终在你的电脑上</li>
+    <li>没有服务器处理——我们根本看不到你的视频</li>
+    <li>没有存储——不会保存任何数据</li>
+  </ul>
+
+  <h2>技术栈</h2>
+  <ul>
+    <li><strong>FFmpeg.wasm</strong> — FFmpeg 的 WebAssembly 版本，浏览器端视频处理</li>
+    <li><strong>Cloudflare Workers</strong> — 边缘 CORS 代理，保证分片下载稳定</li>
+    <li><strong>Cloudflare Pages</strong> — 全球 CDN 加速，访问快人一步</li>
+    <li><strong>纯 HTML/CSS/JavaScript</strong> — 无臃肿框架，极致轻量</li>
+  </ul>
+
+  <h2>联系我们</h2>
+  <p>有建议或反馈？欢迎通过 <a href="contact.html">联系页面</a> 告诉我们。</p>
+</main>
+
+<footer class="footer">
+  <ul class="footer-links">
+    <li><a href="about.html">关于</a></li>
+    <li><a href="privacy.html">隐私政策</a></li>
+    <li><a href="terms.html">使用条款</a></li>
+    <li><a href="contact.html">联系我们</a></li>
+  </ul>
+  <p>&copy; 2026 M3U8转换. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
