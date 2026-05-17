@@ -1,6 +1,6 @@
 // 多语言支持
 window.I18N = {
-  current: (localStorage.getItem('lang') || 'zh'),
+  current: (localStorage.getItem('lang') || 'en'),
   zh: {
     home: '首页', converter: '在线转换', guide: '使用教程', about: '关于', contact: '联系',
     hero_h1: 'M3U8 在线下载 & 播放 · 免费工具',
