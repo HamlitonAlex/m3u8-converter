@@ -3,10 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="教你如何找到 M3U8 链接——使用浏览器开发者工具（F12）提取任何视频网站的 M3U8 地址，Chrome/Firefox/Edge 通用教程。">
-  <meta name="keywords" content="找M3U8链接, 提取M3U8, 获取HLS地址, 开发者工具M3U8, 下载M3U8">
+  <meta name="description" content="M3U8在线工具使用教程：教你在线播放M3U8视频、下载HLS流媒体、合并TS分片、TS转MP4。详细图文步骤，新手友好。">
+  <meta name="keywords" content="M3U8使用教程, M3U8在线播放, HLS下载教程, TS合并, TS转MP4, 在线视频下载教程">
   <meta name="robots" content="index, follow">
-  <title>如何找到 M3U8 链接 — 完整教程 | M3U8转换</title>
+  <link rel="canonical" href="https://m3u8tomp4.com.cn/guide.html">
+  <link rel="alternate" hreflang="zh" href="https://m3u8tomp4.com.cn/guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://m3u8tomp4.com.cn/guide.html">
+  <meta property="og:title" content="M3U8在线工具使用教程 | M3U8在线工具">
+  <meta property="og:description" content="详细教程：在线播放M3U8视频、下载HLS流媒体、合并TS文件、TS转MP4。">
+  <meta property="og:url" content="https://m3u8tomp4.com.cn/guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="M3U8在线工具">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="M3U8在线工具使用教程">
+  <meta name="twitter:description" content="在线播放M3U8视频、下载HLS流媒体、合并TS文件、TS转MP4的完整教程。">
+  <title>M3U8在线工具使用教程 — 播放/下载/合并/转MP4 | M3U8在线工具</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
@@ -21,7 +32,7 @@
       <polygon points="23 7 16 12 23 17 23 7"/>
       <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
     </svg>
-    M3U8转换
+    M3U8在线工具
   </a>
   <ul class="nav-links">
     <li><a href="/">首页</a></li>
@@ -33,90 +44,99 @@
 </nav>
 
 <main class="content-page container">
-  <h1>如何找到 M3U8 链接 — 完整教程</h1>
-  <p>M3U8 链接是下载流媒体视频的钥匙。这篇教程教你用浏览器自带的开发者工具找到它，无需安装任何额外软件。</p>
+  <h1>M3U8在线工具使用教程</h1>
+  <p style="color:var(--text-secondary)">教你使用我们的一站式 M3U8 工具：在线播放、下载视频、合并 TS 分片、转换 MP4。</p>
 
-  <h2>什么是 M3U8 链接？</h2>
-  <p>M3U8 链接是以 <code>.m3u8</code> 结尾的网络地址，指向一个 HLS 播放列表。这个播放列表告诉播放器视频分片段在哪里。大多数流媒体网站都使用 HLS 技术，找到了 M3U8 链接，就找到了完整的视频。</p>
-  <p>典型格式：<code>https://example.com/videos/stream_720p.m3u8</code></p>
-
-  <h2>方法一：Chrome 开发者工具（推荐）</h2>
+  <h2>功能一：在线播放 M3U8 视频</h2>
+  <p>不需要下载任何软件，直接在浏览器中播放 M3U8/HLS 流媒体视频。</p>
   <ol>
-    <li>打开视频页面，<strong>开始播放视频</strong></li>
-    <li>按 <strong>F12</strong>（或 Ctrl+Shift+I）打开开发者工具</li>
-    <li>点击顶部的 <strong>Network（网络）</strong>选项卡</li>
-    <li>在搜索框中输入 <strong>m3u8</strong></li>
-    <li>刷新页面，重新播放视频——会看到 <code>.m3u8</code> 文件出现在列表中</li>
-    <li><strong>右键点击</strong>该条目 → <strong>Copy → Copy link address</strong></li>
-    <li>将链接粘贴到我们的<a href="convert.html">转换工具</a>中</li>
+    <li>打开 <a href="convert.html">在线转换页面</a></li>
+    <li>将 M3U8 链接粘贴到输入框中（例如 <code>https://example.com/video.m3u8</code>）</li>
+    <li>点击 <strong>▶ Play（播放）</strong>按钮</li>
+    <li>视频会加载到内置播放器中，支持全屏、音量调节、进度拖拽</li>
   </ol>
-  <p><strong>提示：</strong>如果看到多个 .m3u8 文件，选含数字如 720、1080 的那个——那是具体分辨率的子播放列表。</p>
+  <p><strong>注意：</strong>播放依赖浏览器的 HLS 支持。推荐使用 Chrome、Edge 或 Firefox 最新版。部分跨域资源需要 CORS 代理中转，工具已自动处理。</p>
 
-  <h2>方法二：Firefox 开发者工具</h2>
+  <h2>功能二：下载 M3U8 视频（TS 分片）</h2>
+  <p>将整个 M3U8 视频的所有分片下载到本地，方便离线观看或进一步处理。</p>
   <ol>
-    <li>打开视频页面，<strong>开始播放</strong></li>
-    <li>按 <strong>F12</strong></li>
-    <li>点击 <strong>Network（网络）</strong>选项卡</li>
-    <li>搜索框输入 <strong>m3u8</strong></li>
-    <li>刷新页面，M3U8 地址会出现在列表中</li>
-    <li>右键链接 → <strong>Copy → Copy URL</strong></li>
+    <li>粘贴 M3U8 链接到输入框</li>
+    <li>点击 <strong>Download（下载）</strong>按钮</li>
+    <li>工具会自动解析播放列表，逐个下载所有 .ts 分片文件</li>
+    <li>下载完成后，工具会自动合并为一个 .ts 文件并触发下载</li>
   </ol>
+  <p>下载后的 .ts 文件可直接用 <a href="https://www.videolan.org/" target="_blank">VLC Media Player</a> 或 PotPlayer 打开播放。</p>
 
-  <h2>方法三：Edge 浏览器</h2>
+  <h2>功能三：拖拽合并本地 TS 文件</h2>
+  <p>如果你已经有了一批 .ts 分片文件（比如通过其他方式下载的），可以用拖拽合并功能：</p>
   <ol>
-    <li>打开页面并播放视频</li>
-    <li>按 <strong>F12</strong> 或 Ctrl+Shift+I</li>
-    <li>进入 <strong>Network（网络）</strong>选项卡</li>
-    <li>搜索 <strong>m3u8</strong></li>
-    <li>找到 .m3u8 条目，右键复制链接地址</li>
+    <li>在工具页面找到 <strong>拖拽区域</strong></li>
+    <li>将所有 .ts 文件从文件夹中拖入（或点击区域选择文件）</li>
+    <li>工具会自动按文件名排序并合并为一个完整文件</li>
+    <li>点击下载按钮保存合并后的视频</li>
   </ol>
+  <p><strong>提示：</strong>确保文件名按播放顺序排列（通常包含序号如 001.ts、002.ts），合并结果才正确。</p>
+
+  <h2>功能四：TS 转 MP4（需要 FFmpeg）</h2>
+  <p>下载或合并后的 TS 文件可以通过 FFmpeg 无损转为通用 MP4 格式：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i "视频.ts" -c copy -bsf:a aac_adtstoasc "输出.mp4"</code></pre>
+  <ul>
+    <li><code>-c copy</code> 表示直接复制编码，不重新压缩，10 秒内完成且画质无损</li>
+    <li><code>-bsf:a aac_adtstoasc</code> 处理 AAC 音频，确保 MP4 兼容性</li>
+  </ul>
+  <p>详细 FFmpeg 安装和批量转换教程参见：<a href="blog/ts-to-mp4.html">TS 转 MP4 完整教程</a>。</p>
 
   <h2>常见问题</h2>
 
   <div class="faq" style="padding:0">
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-        网络选项卡中没有出现 .m3u8 文件
+        点击播放后没有反应？
         <span>▾</span>
       </div>
       <div class="faq-a">
-        <p>试试这些方法：</p>
         <ul>
-          <li>确保视频<strong>正在播放</strong>——暂停状态可能不会发起新请求</li>
-          <li>清空网络列表后<strong>刷新页面</strong>重新播放</li>
-          <li>搜索 <strong>.ts</strong> 代替——视频分片文件，观察其请求规律推测 M3U8 地址</li>
-          <li>部分网站使用 DRM 加密保护——这类视频无法转换</li>
+          <li>检查 M3U8 链接是否正确（必须以 .m3u8 结尾或包含 m3u8 路径）</li>
+          <li>确认链接没有过期——部分网站的 M3U8 链接有时效性</li>
+          <li>检查浏览器控制台（F12 → Console）是否有报错信息</li>
+          <li>尝试用 Download 代替 Play——下载合并后再播放</li>
         </ul>
       </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-        看到的是"主播放列表"——该用哪个？
+        下载进度卡住不动了？
         <span>▾</span>
       </div>
-      <div class="faq-a">主播放列表包含多个清晰度的链接。你需要<strong>子播放列表</strong>（某个具体分辨率的链接）。找含数字如 720、1080、480 的地址。不确定的话，逐个尝试——我们的工具会自动识别。</div>
+      <div class="faq-a">
+        <ul>
+          <li>TS 分片数量可能很多（几百个），需要耐心等待</li>
+          <li>某个分片请求失败——工具会自动重试 3 次</li>
+          <li>网络不稳定导致超时——刷新页面重试</li>
+          <li>如果反复失败，可能是目标服务器限制了跨域访问</li>
+        </ul>
+      </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-        M3U8 链接失效或过期了
+        合并后的视频没有声音？
         <span>▾</span>
       </div>
-      <div class="faq-a">有些网站使用<strong>时效性令牌</strong>——M3U8 链接只有几分钟有效期。复制链接后需要立即使用。如果返回"403 Forbidden"或空白内容，说明链接已过期。</div>
+      <div class="faq-a">部分 HLS 流将音频和视频分离在不同的分片中。我们的工具会合并所有分片，但若源流本身就是音视频分离的，建议用 FFmpeg 进一步处理。参见 <a href="blog/ts-to-mp4.html">TS 转 MP4 教程</a>。</div>
     </div>
 
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-        DRM 加密的视频能转吗？
+        不知道 M3U8 链接在哪里？
         <span>▾</span>
       </div>
-      <div class="faq-a"><strong>不能。</strong>DRM 加密视频（如 Netflix、Disney+、爱奇艺等）无法转换。本工具仅适用于标准的、未加密的 HLS 流。绕过 DRM 在大多数地区属于违法行为。</div>
+      <div class="faq-a">参见我们的 <a href="blog/how-to-find-m3u8.html"><strong>M3U8 链接查找教程</strong></a>，教你用浏览器开发者工具轻松获取任何网站的 M3U8 地址。</div>
     </div>
   </div>
 
-  <h2>准备开始？</h2>
-  <p>有了 M3U8 链接，去<a href="convert.html"><strong>转换工具</strong></a>粘贴即可下载 MP4。</p>
+  <p style="margin-top:32px"><a href="convert.html"><strong>马上去使用工具 →</strong></a></p>
 </main>
 
 <footer class="footer">
@@ -126,8 +146,18 @@
     <li><a href="terms.html">使用条款</a></li>
     <li><a href="contact.html">联系我们</a></li>
   </ul>
-  <p>&copy; 2026 M3U8转换. All rights reserved.</p>
+  <p>&copy; 2026 M3U8在线工具</p>
 </footer>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "M3U8在线工具使用教程 — 播放/下载/合并/转MP4",
+  "description": "详细教程：在线播放M3U8视频、下载HLS流媒体、合并TS文件、TS转MP4。",
+  "datePublished": "2026-05-17",
+  "author": {"@type": "Organization", "name": "M3U8在线工具"}
+}
+</script>
 </body>
 </html>
