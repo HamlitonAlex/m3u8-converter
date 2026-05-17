@@ -2,7 +2,7 @@
 window.I18N = {
   current: (function() { var v = localStorage.getItem('lang'); if (!v || v === 'zh' && !localStorage.getItem('lang_v2')) { localStorage.setItem('lang', 'en'); localStorage.setItem('lang_v2', '1'); return 'en'; } return v; })(),
   zh: {
-    home: '首页', converter: '在线播放', guide: '教程', about: '关于', contact: '联系',
+    home: '首页', converter: '在线播放', blog: '文章', guide: '教程', about: '关于', contact: '联系',
     hero_h1: 'M3U8 在线下载 & 播放 · 免费工具',
     hero_p: '无需安装任何软件，在线播放或下载 M3U8/HLS 流媒体视频。快速、安全、完全免费。',
     hero_btn: '立即使用 →',
@@ -47,7 +47,7 @@ window.I18N = {
     err_no_url: '请输入 M3U8 链接', err_invalid_url: '请输入有效的 URL',
   },
   en: {
-    home: 'Home', converter: 'Converter', guide: 'Guide', about: 'About', contact: 'Contact',
+    home: 'Home', converter: 'Player', blog: 'Blog', guide: 'Guide', about: 'About', contact: 'Contact',
     hero_h1: 'M3U8 Online Player & Downloader · Free Tool',
     hero_p: 'No software install needed. Play or download M3U8/HLS streaming videos online. Fast, secure, and completely free.',
     hero_btn: 'Get Started →',
