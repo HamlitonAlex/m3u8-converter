@@ -1,8 +1,8 @@
 // 多语言支持
 window.I18N = {
-  current: (localStorage.getItem('lang') || 'en'),
+  current: (function() { var v = localStorage.getItem('lang'); if (!v || v === 'zh' && !localStorage.getItem('lang_v2')) { localStorage.setItem('lang', 'en'); localStorage.setItem('lang_v2', '1'); return 'en'; } return v; })(),
   zh: {
-    home: '首页', converter: '在线转换', guide: '使用教程', about: '关于', contact: '联系',
+    home: '首页', converter: '在线播放', guide: '教程', about: '关于', contact: '联系',
     hero_h1: 'M3U8 在线下载 & 播放 · 免费工具',
     hero_p: '无需安装任何软件，在线播放或下载 M3U8/HLS 流媒体视频。快速、安全、完全免费。',
     hero_btn: '立即使用 →',

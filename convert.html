@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://m3u8tomp4.com.cn/convert.html">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
-  <title data-i18n="convert_h1">M3U8 在线下载 & 播放</title>
+  <title>M3U8 Player & Downloader — Free Online Tool</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
@@ -29,14 +29,14 @@
       <polygon points="23 7 16 12 23 17 23 7"/>
       <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
     </svg>
-    M3U8在线
+    M3U8 Player
   </a>
   <ul class="nav-links">
-    <li><a href="/" data-i18n="home">首页</a></li>
-    <li><a href="convert.html" data-i18n="converter">在线转换</a></li>
-    <li><a href="guide.html">教程</a></li>
-    <li><a href="about.html" data-i18n="about">关于</a></li>
-    <li><a href="contact.html" data-i18n="contact">联系</a></li>
+    <li><a href="/" data-i18n="home">Home</a></li>
+    <li><a href="convert.html" data-i18n="converter">Player</a></li>
+    <li><a href="guide.html" data-i18n="guide">Guide</a></li>
+    <li><a href="about.html" data-i18n="about">About</a></li>
+    <li><a href="contact.html" data-i18n="contact">Contact</a></li>
     <li><button id="langBtn" class="btn btn-secondary" style="padding:4px 12px;font-size:0.8rem" onclick="I18N.toggle()">EN</button></li>
   </ul>
 </nav>
@@ -44,25 +44,25 @@
 <main class="converter-section">
   <div class="container">
     <div class="converter-card">
-      <h1 data-i18n="convert_h1">M3U8 在线下载 & 播放</h1>
-      <p class="subtitle" data-i18n="convert_subtitle">粘贴 M3U8 链接，在线播放或下载流媒体视频。</p>
+      <h1 data-i18n="convert_h1">M3U8 Player & Downloader</h1>
+      <p class="subtitle" data-i18n="convert_subtitle">Paste an M3U8 link to play or download streaming videos.</p>
 
       <div class="input-group">
-        <input type="text" id="m3u8Url" data-i18n-placeholder="convert_placeholder" placeholder="在此粘贴 M3U8 链接，例如：https://example.com/video.m3u8">
-        <button class="btn btn-secondary" id="playBtn" onclick="playM3u8()" data-i18n="play_btn">▶ 在线播放</button>
-        <button class="btn btn-primary" id="convertBtn" onclick="startConversion()" data-i18n="download_btn">下载视频</button>
+        <input type="text" id="m3u8Url" data-i18n-placeholder="convert_placeholder" placeholder="Paste M3U8 URL, e.g. https://example.com/video.m3u8">
+        <button class="btn btn-secondary" id="playBtn" onclick="playM3u8()" data-i18n="play_btn">▶ Play</button>
+        <button class="btn btn-primary" id="convertBtn" onclick="startConversion()" data-i18n="download_btn">Download</button>
       </div>
 
       <div class="video-player" id="videoPlayer" style="display:none">
         <video id="videoEl" controls></video>
-        <button class="btn btn-secondary" style="margin-top:8px" onclick="closePlayer()" data-i18n="close_player">关闭播放器</button>
+        <button class="btn btn-secondary" style="margin-top:8px" onclick="closePlayer()" data-i18n="close_player">Close Player</button>
       </div>
 
       <div class="drop-zone" id="dropZone">
         <div class="drop-zone-content">
           <span class="drop-icon">📂</span>
-          <p><strong data-i18n="drop_title">或拖拽 .ts 分片文件到此处</strong></p>
-          <p class="drop-hint" data-i18n="drop_hint">支持直接合并本地 TS 视频分片</p>
+          <p><strong data-i18n="drop_title">Or drag .ts segment files here</strong></p>
+          <p class="drop-hint" data-i18n="drop_hint">Supports merging local TS video segments</p>
         </div>
         <input type="file" id="fileInput" multiple accept=".ts" style="display:none">
       </div>
@@ -85,32 +85,32 @@
     <div class="ad-placeholder"><!-- Google AdSense Auto Ads --></div>
 
     <div class="instructions">
-      <h3 data-i18n="instr_title">使用说明</h3>
+      <h3 data-i18n="instr_title">How to Use</h3>
       <ol>
-        <li data-i18n-html="instr_1"><strong>获取 M3U8 链接</strong>：在视频网站找到 .m3u8 地址（F12 → 网络 → 搜索 "m3u8"）</li>
-        <li data-i18n-html="instr_2"><strong>粘贴链接</strong>：将链接粘贴到上方输入框中</li>
-        <li data-i18n-html="instr_3"><strong>点击播放或下载</strong>：在线播放预览，或下载合并后的 TS 文件</li>
-        <li data-i18n-html="instr_4"><strong>播放</strong>：TS 文件用 VLC、PotPlayer、迅雷影音直接播放</li>
+        <li data-i18n-html="instr_1"><strong>Get the M3U8 link</strong> — Find the .m3u8 URL (F12 → Network → search "m3u8")</li>
+        <li data-i18n-html="instr_2"><strong>Paste the link</strong> — Paste it into the input box above</li>
+        <li data-i18n-html="instr_3"><strong>Play or Download</strong> — Click Play to stream, or Download to save</li>
+        <li data-i18n-html="instr_4"><strong>Playback</strong> — Open downloaded TS files with VLC or PotPlayer</li>
       </ol>
-      <h3 data-i18n="ts_title">如何将 TS 转为 MP4（无损秒转，推荐）</h3>
+      <h3 data-i18n="ts_title">How to Convert TS to MP4 (Lossless, Instant)</h3>
       <ol>
-        <li data-i18n-html="ts_1">下载 <a href="https://ffmpeg.org/download.html" target="_blank">FFmpeg</a></li>
-        <li data-i18n-html="ts_2">解压后找到 <code>bin/ffmpeg.exe</code></li>
-        <li data-i18n-html="ts_3">命令行执行：<code>ffmpeg -i "视频.ts" -c copy "输出.mp4"</code></li>
+        <li data-i18n-html="ts_1">Download <a href="https://ffmpeg.org/download.html" target="_blank">FFmpeg</a></li>
+        <li data-i18n-html="ts_2">Extract and find <code>bin/ffmpeg.exe</code></li>
+        <li data-i18n-html="ts_3">Run: <code>ffmpeg -i "video.ts" -c copy "output.mp4"</code></li>
       </ol>
-      <p style="color:var(--text-secondary);font-size:0.85rem" data-i18n-html="ts_note"><code>-c copy</code> = 无损秒转</p>
+      <p style="color:var(--text-secondary);font-size:0.85rem" data-i18n-html="ts_note"><code>-c copy</code> = lossless, instant conversion</p>
     </div>
   </div>
 </main>
 
 <footer class="footer">
   <ul class="footer-links">
-    <li><a href="about.html" data-i18n="footer_about">关于</a></li>
-    <li><a href="privacy.html" data-i18n="footer_privacy">隐私政策</a></li>
-    <li><a href="terms.html" data-i18n="footer_terms">使用条款</a></li>
-    <li><a href="contact.html" data-i18n="footer_contact">联系我们</a></li>
+    <li><a href="about.html" data-i18n="footer_about">About</a></li>
+    <li><a href="privacy.html" data-i18n="footer_privacy">Privacy</a></li>
+    <li><a href="terms.html" data-i18n="footer_terms">Terms</a></li>
+    <li><a href="contact.html" data-i18n="footer_contact">Contact</a></li>
   </ul>
-  <p data-i18n="footer_copy">© 2026 M3U8在线工具</p>
+  <p data-i18n="footer_copy">© 2026 M3U8 Online Player</p>
 </footer>
 
 <script src="js/downloader.js?v=3"></script>
