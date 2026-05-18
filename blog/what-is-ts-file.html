@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="What is a TS file? Complete guide to MPEG Transport Stream files — how they work, why streaming sites use them, and how to play or convert them.">
+  <meta name="keywords" content="what is a TS file, TS file format, MPEG transport stream, TS video file, TS file player, TS file explained">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://m3u8tomp4.com.cn/blog/what-is-ts-file.html">
+  <link rel="alternate" hreflang="zh" href="https://m3u8tomp4.com.cn/blog/what-is-ts-file.html">
+  <link rel="alternate" hreflang="x-default" href="https://m3u8tomp4.com.cn/blog/what-is-ts-file.html">
+  <meta property="og:title" content="What is a TS File? Complete Guide to MPEG Transport Stream | M3U8 Player">
+  <meta property="og:description" content="Learn what TS files are, why streaming sites use them, and how to play, convert, or merge TS video files. Beginner-friendly guide.">
+  <meta property="og:url" content="https://m3u8tomp4.com.cn/blog/what-is-ts-file.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="M3U8 Player">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What is a TS File? Complete Guide">
+  <meta name="twitter:description" content="Learn what TS files are and how to play, convert, or merge them. Beginner-friendly.">
+  <title>What is a TS File? Complete Guide to MPEG Transport Stream | M3U8 Player</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3PwcUWLRlOTQ9dMa",ck:"3PwcUWLRlOTQ9dMa"})</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+    M3U8 Player
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/convert.html">Player</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/guide.html">Guide</a></li>
+    <li><a href="/about.html">About</a></li>
+  </ul>
+</nav>
+
+<main class="content-page container">
+  <h1>What is a TS File? Complete Guide to MPEG Transport Stream</h1>
+  <p style="color:var(--text-secondary)">Published: May 2026 &nbsp;|&nbsp; Reading time: 4 min</p>
+
+  <h2>TS = Transport Stream</h2>
+  <p>A <strong>TS file</strong> (file extension <code>.ts</code>) is an MPEG Transport Stream — a container format designed for broadcasting and streaming video. Unlike MP4, which is optimized for storage, TS is built for <strong>transmission</strong>: it can be read while it's still being received, recovers gracefully from errors, and splits naturally into small chunks.</p>
+
+  <h2>Why Streaming Sites Use TS Files</h2>
+  <p>When you watch a video online, the site rarely sends you one big MP4 file. Instead, it sends hundreds or thousands of tiny TS files, each containing 2–10 seconds of video. This is called HLS (HTTP Live Streaming), and the TS format was chosen because:</p>
+  <ul>
+    <li><strong>Error recovery</strong> — If one chunk is corrupted, only a few seconds are lost. The player continues from the next chunk</li>
+    <li><strong>Instant start</strong> — The player loads just one chunk and starts playing. It doesn't need the whole file</li>
+    <li><strong>Adaptive quality</strong> — The player can switch between 720p and 1080p TS chunks mid-stream as your internet speed changes</li>
+    <li><strong>CDN cache-friendly</strong> — Small files cache well on CDNs (Cloudflare, Akamai), delivering fast load times worldwide</li>
+  </ul>
+
+  <h2>TS vs MP4 vs MKV: Which Container Does What?</h2>
+  <table style="width:100%;border-collapse:collapse;margin:16px 0">
+    <tr style="background:var(--bg-secondary)"><th style="padding:8px;text-align:left">Format</th><th style="padding:8px;text-align:left">Purpose</th><th style="padding:8px;text-align:left">Best For</th></tr>
+    <tr><td style="padding:8px"><strong>TS</strong></td><td style="padding:8px">Broadcast & streaming</td><td style="padding:8px">Live TV, HLS streaming</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:8px"><strong>MP4</strong></td><td style="padding:8px">Storage & distribution</td><td style="padding:8px">Downloading, sharing, editing</td></tr>
+    <tr><td style="padding:8px"><strong>MKV</strong></td><td style="padding:8px">Archiving & high quality</td><td style="padding:8px">Blu-ray rips, multi-audio, subtitles</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:8px"><strong>WebM</strong></td><td style="padding:8px">Web-optimized</td><td style="padding:8px">HTML5 video, small file size</td></tr>
+  </table>
+
+  <h2>How to Open TS Files</h2>
+  <p>TS files can't be opened by Windows Media Player or QuickTime. Here's what works:</p>
+  <ul>
+    <li><strong>VLC Media Player</strong> — Plays TS natively, no setup needed. <a href="vlc-play-m3u8.html">See our VLC guide</a></li>
+    <li><strong>PotPlayer</strong> (Windows) — Excellent TS support with hardware acceleration</li>
+    <li><strong>IINA</strong> (Mac) — Native macOS player with great TS support</li>
+    <li><strong>Our online player</strong> — Paste the M3U8 URL and stream in your browser. <a href="/convert.html">Try it here</a></li>
+  </ul>
+
+  <h2>How to Convert TS to MP4</h2>
+  <p>TS files can be converted to MP4 instantly without quality loss using FFmpeg:</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i "video.ts" -c copy -bsf:a aac_adtstoasc "video.mp4"</code></pre>
+  <p>The <code>-c copy</code> flag copies the video stream without re-encoding — it takes seconds and preserves the original quality. See our <a href="ts-to-mp4.html">complete TS to MP4 guide</a> for detailed instructions.</p>
+
+  <h2>How to Merge Multiple TS Files</h2>
+  <p>If you have many TS segments from a download, you can merge them:</p>
+  <p><strong>Windows (Command Prompt):</strong></p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>copy /b *.ts merged.ts</code></pre>
+  <p><strong>Mac / Linux:</strong></p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>cat *.ts > merged.ts</code></pre>
+  <p>For the best results, use our <a href="/convert.html">online downloader</a> which merges segments automatically.</p>
+
+  <p style="margin-top:32px"><a href="/blog/"><strong>More Tutorials →</strong></a></p>
+</main>
+
+<footer class="footer">
+  <ul class="footer-links">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/privacy.html">Privacy</a></li>
+    <li><a href="/terms.html">Terms</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <p>© 2026 M3U8 Online Player</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What is a TS File? Complete Guide to MPEG Transport Stream",
+  "description": "Learn what TS files are, why streaming sites use them, and how to play, convert, or merge TS video files.",
+  "datePublished": "2026-05-19",
+  "author": {"@type": "Organization", "name": "M3U8 Player"}
+}
+</script>
+</body>
+</html>

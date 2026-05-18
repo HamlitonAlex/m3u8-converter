@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to merge TS video files on Windows, Mac, and Linux. Combine multiple TS segments into one video using FFmpeg, copy command, or free online tools.">
+  <meta name="keywords" content="merge TS files, combine TS segments, join TS files, TS merger, FFmpeg merge TS, concatenate TS files, merge video segments">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://m3u8tomp4.com.cn/blog/merge-ts-files.html">
+  <link rel="alternate" hreflang="zh" href="https://m3u8tomp4.com.cn/blog/merge-ts-files.html">
+  <link rel="alternate" hreflang="x-default" href="https://m3u8tomp4.com.cn/blog/merge-ts-files.html">
+  <meta property="og:title" content="How to Merge TS Files — 3 Free Methods (Windows/Mac/Linux) | M3U8 Player">
+  <meta property="og:description" content="Combine multiple TS video segments into one file. FFmpeg, command line, and online methods. All free, no quality loss.">
+  <meta property="og:url" content="https://m3u8tomp4.com.cn/blog/merge-ts-files.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="M3U8 Player">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Merge TS Files — 3 Free Methods">
+  <meta name="twitter:description" content="Combine multiple TS video segments into one file. FFmpeg, command line, online. Free, no quality loss.">
+  <title>How to Merge TS Files — 3 Free Methods (Windows/Mac/Linux) | M3U8 Player</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3PwcUWLRlOTQ9dMa",ck:"3PwcUWLRlOTQ9dMa"})</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+    M3U8 Player
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/convert.html">Player</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/guide.html">Guide</a></li>
+    <li><a href="/about.html">About</a></li>
+  </ul>
+</nav>
+
+<main class="content-page container">
+  <h1>How to Merge TS Files — 3 Free Methods (Windows/Mac/Linux)</h1>
+  <p style="color:var(--text-secondary)">Published: May 2026 &nbsp;|&nbsp; Reading time: 4 min</p>
+
+  <h2>Why Merge TS Files?</h2>
+  <p>When you download a streaming video, you often end up with dozens or hundreds of small TS segments instead of one continuous file. To watch the video smoothly or convert it to MP4, you need to combine these segments first.</p>
+  <p>Here are the three best free methods, ranked from easiest to most powerful.</p>
+
+  <h2>Method 1: Use Our Online Downloader (Easiest — No Manual Work)</h2>
+  <p>Our <a href="/convert.html">M3U8 downloader</a> handles merging automatically. Paste the M3U8 URL, click Download, and you get a single merged TS file. No manual segment handling required.</p>
+  <p>This is the best option if you still have the original M3U8 playlist URL. Skip to the <a href="/convert.html">player page</a> and let it do the work.</p>
+
+  <h2>Method 2: FFmpeg Concatenation (Best Quality & Control)</h2>
+  <p>FFmpeg can merge TS files with zero quality loss. First, create a text file listing all your segments:</p>
+
+  <p><strong>Step 1: Create a file list</strong></p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>file 'segment_001.ts'
+file 'segment_002.ts'
+file 'segment_003.ts'
+...</code></pre>
+  <p>On Windows, generate this automatically in Command Prompt:</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>(for %i in (*.ts) do @echo file '%i') > filelist.txt</code></pre>
+  <p>On Mac/Linux:</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>for f in *.ts; do echo "file '$f'" >> filelist.txt; done</code></pre>
+
+  <p><strong>Step 2: Run the merge</strong></p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -f concat -safe 0 -i filelist.txt -c copy merged.ts</code></pre>
+
+  <p><strong>Step 3 (Optional): Convert to MP4</strong></p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i merged.ts -c copy -bsf:a aac_adtstoasc merged.mp4</code></pre>
+
+  <p>The <code>-c copy</code> flag means no re-encoding — the merge takes seconds regardless of video length. Read our <a href="ts-to-mp4.html">TS to MP4 guide</a> for more conversion options.</p>
+
+  <h2>Method 3: Binary Concatenation (No Software Install)</h2>
+  <p>TS files can be merged with a simple copy command — no FFmpeg needed. This works because the TS format is designed for concatenation.</p>
+
+  <p><strong>Windows:</strong></p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>copy /b segment_001.ts + segment_002.ts + segment_003.ts merged.ts</code></pre>
+  <p>Or merge all TS files in a folder:</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>copy /b *.ts merged.ts</code></pre>
+
+  <p><strong>Mac / Linux:</strong></p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>cat *.ts > merged.ts</code></pre>
+
+  <p><strong>Warning:</strong> The binary method assumes files are in correct alphabetical order and all have the same codec parameters. If your segments are numbered with leading zeros (segment_001.ts, segment_002.ts), alphabetical order works. Without leading zeros, segment_10.ts sorts before segment_2.ts, causing playback errors. FFmpeg's concat demuxer (Method 2) is more reliable.</p>
+
+  <h2>Which Method Should You Use?</h2>
+  <table style="width:100%;border-collapse:collapse;margin:16px 0">
+    <tr style="background:var(--bg-secondary)"><th style="padding:8px;text-align:left">Method</th><th style="padding:8px;text-align:left">Best For</th><th style="padding:8px;text-align:left">Speed</th><th style="padding:8px;text-align:left">Reliability</th></tr>
+    <tr><td style="padding:8px">Online downloader</td><td style="padding:8px">Still have M3U8 URL</td><td style="padding:8px">Automatic</td><td style="padding:8px;color:var(--primary)">Best</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:8px">FFmpeg concat</td><td style="padding:8px">Many segments, need reliability</td><td style="padding:8px">Seconds</td><td style="padding:8px;color:var(--primary)">Best</td></tr>
+    <tr><td style="padding:8px">Binary copy/cat</td><td style="padding:8px">Quick merge, no FFmpeg</td><td style="padding:8px">Instant</td><td style="padding:8px">Good (with caveats)</td></tr>
+  </table>
+
+  <p style="margin-top:32px"><a href="/convert.html"><strong>Try the Online Merger →</strong></a></p>
+</main>
+
+<footer class="footer">
+  <ul class="footer-links">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/privacy.html">Privacy</a></li>
+    <li><a href="/terms.html">Terms</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <p>© 2026 M3U8 Online Player</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Merge TS Files — 3 Free Methods (Windows/Mac/Linux)",
+  "description": "Combine multiple TS video segments into one file. FFmpeg, command line, and online methods compared. Free, no quality loss.",
+  "datePublished": "2026-05-19",
+  "author": {"@type": "Organization", "name": "M3U8 Player"}
+}
+</script>
+</body>
+</html>
