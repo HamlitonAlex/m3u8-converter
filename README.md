@@ -1,37 +1,45 @@
-# M3U8 在线播放 & 下载工具
+# M3U8 Online Player & Downloader — Free Tool
 
-🔗 **网址：** [https://m3u8tomp4.com.cn](https://m3u8tomp4.com.cn)
+**Live site:** [m3u8tomp4.com.cn](https://m3u8tomp4.com.cn) | [www.m3u8tomp4.com.cn](https://www.m3u8tomp4.com.cn)
 
-免费的在线 M3U8/HLS 流媒体视频播放和下载工具。粘贴 M3U8 链接即可在线播放或下载视频。
+Free online M3U8/HLS streaming video player and downloader. Paste an M3U8 link to play or download videos instantly. No install, no registration, 100% free.
 
-## ✨ 功能
+## Features
 
-- ▶️ **在线播放** — 直接播放 M3U8/HLS 视频流
-- 📥 **下载视频** — 服务端合并 TS 分片，一键下载
-- 🌐 **中英双语** — 支持中文/English 切换
-- 📱 **全平台** — PC、手机、平板都能用
-- 🔒 **隐私安全** — 服务端不保存任何数据
+- **Online Player** — Stream M3U8/HLS videos directly in your browser via hls.js
+- **Video Downloader** — Server-side TS segment merging, one-click download
+- **Chinese / English** — Full i18n support with localStorage persistence
+- **All Platforms** — Works on Windows, Mac, Linux, iOS, Android
+- **Privacy First** — Server proxies requests but stores nothing
 
-## 🛠️ 技术架构
+## Blog & Guides
 
-- **前端**：纯 HTML/CSS/JS（零框架）
-- **播放**：hls.js
-- **后端代理**：阿里云函数计算（Node.js）
-- **托管**：Cloudflare Pages
-- **CDN**：Cloudflare + 阿里云
+Free tutorials about M3U8, HLS streaming, and video tools:
 
-## 📖 本地运行
+- [M3U8 to MP4 Converter Guide](https://m3u8tomp4.com.cn/blog/m3u8-to-mp4-online-converter.html)
+- [How to Download Streaming Videos](https://m3u8tomp4.com.cn/blog/download-streaming-video-any-website.html)
+- [M3U8 Troubleshooting](https://m3u8tomp4.com.cn/blog/m3u8-download-troubleshooting.html)
+- [All guides →](https://m3u8tomp4.com.cn/blog/)
+
+## Tech Stack
+
+- **Frontend:** Vanilla HTML/CSS/JS, hls.js
+- **Proxy:** Alibaba Cloud Function Compute (Node.js) — handles CORS & referrer restrictions
+- **Hosting:** Cloudflare Pages (free tier)
+- **Analytics:** 51.la
+
+## Local Dev
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/m3u8-converter.git
+git clone https://github.com/HamlitonAlex/m3u8-converter.git
 cd m3u8-converter
-# 用任意 HTTP 服务器打开，如 VS Code Live Server
+# Open with any static server, e.g. VS Code Live Server
 ```
 
-## 📄 License
+## License
 
 MIT
 
 ---
 
-⭐ 如果这个工具对你有帮助，欢迎 Star！
+If this tool helped you, please consider starring the repo.
