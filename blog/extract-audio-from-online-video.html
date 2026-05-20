@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="如何从在线视频中提取音频？5种免费方法教程：FFmpeg命令行、在线工具、浏览器扩展、Audacity录制、VLC提取。支持 MP3/WAV/AAC 格式。">
+  <meta name="keywords" content="提取视频音频, 视频转音频, 视频提取MP3, 在线视频提取音频, FFmpeg提取音频, 视频转MP3教程">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://m3u8tomp4.com.cn/blog/extract-audio-from-online-video.html">
+  <link rel="alternate" hreflang="zh" href="https://m3u8tomp4.com.cn/blog/extract-audio-from-online-video.html">
+  <link rel="alternate" hreflang="x-default" href="https://m3u8tomp4.com.cn/blog/extract-audio-from-online-video.html">
+  <meta property="og:title" content="如何从在线视频中提取音频？5种免费方法 | M3U8在线工具">
+  <meta property="og:description" content="从视频中提取音频的5种免费方法：FFmpeg命令行、在线工具、浏览器扩展、Audacity录制、VLC提取。MP3/WAV/AAC。">
+  <meta property="og:url" content="https://m3u8tomp4.com.cn/blog/extract-audio-from-online-video.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="M3U8在线工具">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="如何从在线视频中提取音频？5种免费方法">
+  <meta name="twitter:description" content="FFmpeg、在线工具、浏览器扩展、Audacity、VLC。免费提取视频中的音频。">
+  <title>如何从在线视频中提取音频？5种免费方法 | M3U8在线工具</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3PwcUWLRlOTQ9dMa",ck:"3PwcUWLRlOTQ9dMa"})</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+    M3U8在线工具
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">首页</a></li>
+    <li><a href="/convert.html">在线转换</a></li>
+    <li><a href="/blog/">教程文章</a></li>
+    <li><a href="/about.html">关于</a></li>
+    <li><a href="/contact.html">联系</a></li>
+  </ul>
+</nav>
+
+<main class="content-page container">
+  <h1>如何从在线视频中提取音频？5种免费方法</h1>
+  <p style="color:var(--text-secondary)">发布：2026年5月 &nbsp;|&nbsp; 适用：Windows / Mac / Linux / 手机</p>
+
+  <h2>什么时候需要提取视频中的音频？</h2>
+  <p>很多场景下我们只需要视频中的声音部分：想保存一首 MV 的背景音乐、提取教程视频中的讲解录音、制作播客素材、或者只是想在没有画面的情况下听内容。以下是五种完全免费的方法，从命令行到图形化工具，适合不同需求的用户。</p>
+
+  <h2>方法一：FFmpeg 命令行（最快、最高效）</h2>
+  <p>FFmpeg 是提取音频的最强大工具，一行命令即可完成。如果还没安装，参考我们的 <a href="ts-to-mp4.html">FFmpeg 安装教程</a>。</p>
+
+  <h3>提取为 MP3 格式</h3>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i "视频文件.mp4" -vn -c:a libmp3lame -q:a 2 "输出音频.mp3"</code></pre>
+  <p>参数说明：<code>-vn</code> 表示不要视频轨，<code>-c:a libmp3lame</code> 使用 MP3 编码器，<code>-q:a 2</code> 设定音质（0=最高，5=标准）。</p>
+
+  <h3>提取为 AAC 格式（更小体积）</h3>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i "视频文件.mp4" -vn -c:a aac -b:a 192k "输出音频.aac"</code></pre>
+
+  <h3>提取无损原始音频（WAV）</h3>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i "视频文件.mp4" -vn -c:a pcm_s16le "输出音频.wav"</code></pre>
+  <p>WAV 格式无损，但文件较大，适合需要后期编辑的场景。</p>
+
+  <h3>批量提取多个视频的音频</h3>
+  <p>Windows 下创建 <code>extract_audio.bat</code>：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>@echo off
+for %%i in (*.mp4 *.mkv *.ts) do (
+    ffmpeg -i "%%i" -vn -c:a libmp3lame -q:a 2 "%%~ni.mp3"
+)
+echo 全部提取完成！
+pause</code></pre>
+
+  <h2>方法二：用 VLC 提取（图形化、免费）</h2>
+  <p>VLC 不仅是播放器，还内置了格式转换功能：</p>
+  <ol>
+    <li>打开 VLC → 菜单栏 <strong>媒体</strong> → <strong>转换/保存</strong></li>
+    <li>点击「添加」选择视频文件 → 点击「转换/保存」按钮</li>
+    <li>在「配置文件」下拉菜单中选择 <strong>音频 - MP3</strong> 或 <strong>音频 - FLAC</strong></li>
+    <li>点击「目标文件」旁边的「浏览」选择保存位置</li>
+    <li>点击「开始」，VLC 即开始提取音频</li>
+  </ol>
+  <p>VLC 方式的优点是免费、有中文界面、不需要命令行。缺点是转换速度不如 FFmpeg，且格式选项有限。</p>
+
+  <h2>方法三：Audacity 录制（免费开源、可编辑）</h2>
+  <p>Audacity 是一款免费开源的音频编辑软件。它的独特优势是可以通过系统音频录制电脑正在播放的任何声音——包括在线视频。</p>
+  <ol>
+    <li>下载安装 <a href="https://www.audacityteam.org/" target="_blank">Audacity</a></li>
+    <li>在 Audacity 中将录音设备设为 <strong>Windows WASAPI</strong> 或 <strong>立体声混音</strong></li>
+    <li>点击红色录音按钮，然后播放要提取的视频</li>
+    <li>录制完成后，文件 → 导出 → 导出为 MP3/WAV</li>
+  </ol>
+  <p>如果找不到"立体声混音"设备，可能需要安装 <a href="https://vb-audio.com/Cable/" target="_blank">VB-Audio Virtual Cable</a>（免费虚拟声卡）。</p>
+
+  <h2>方法四：在线工具（无需安装）</h2>
+  <p>如果只是偶尔提取一两个视频的音频，可以使用在线工具。但需要注意：上传到其他服务器的视频有隐私风险，不适合敏感内容。</p>
+  <p>先在 <a href="/convert.html">M3U8在线工具</a> 中下载视频文件，然后使用以下任意在线服务提取音频：</p>
+  <ul>
+    <li><strong>Online Audio Converter</strong> — 支持多种音频格式，免费</li>
+    <li><strong>CloudConvert</strong> — 功能全面，每日免费额度有限</li>
+    <li><strong>Zamzar</strong> — 老牌工具，支持大批量格式转换</li>
+  </ul>
+  <p>在线工具适合临时使用和移动端场景，但不适合大文件（通常有 100-200MB 限制）。</p>
+
+  <h2>方法五：手机端提取</h2>
+  <h3>iPhone / iPad</h3>
+  <p>使用「快捷指令」App：搜索"视频转音频"快捷指令，添加后直接在相册中分享视频 → 选择该指令 → 自动导出音频文件到「文件」App。</p>
+
+  <h3>Android</h3>
+  <p>推荐使用 <strong>Video to MP3 Converter</strong> 或 <strong>Media Converter</strong> 等免费 App，在 Google Play 搜索即可。这些 App 通常支持批量转换和多种输出格式。</p>
+
+  <h2>五种方法对比</h2>
+  <table style="width:100%;border-collapse:collapse;margin:16px 0">
+    <tr style="background:var(--bg-secondary)"><th style="padding:8px;text-align:left">方法</th><th style="padding:8px;text-align:left">适合人群</th><th style="padding:8px;text-align:left">速度</th><th style="padding:8px;text-align:left">格式支持</th><th style="padding:8px;text-align:left">限制</th></tr>
+    <tr><td style="padding:8px;color:var(--primary)">FFmpeg</td><td style="padding:8px">注重效率、批量处理</td><td style="padding:8px">最快</td><td style="padding:8px">最全</td><td style="padding:8px">需学命令行</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:8px">VLC</td><td style="padding:8px">不需要命令行的用户</td><td style="padding:8px">中等</td><td style="padding:8px">一般</td><td style="padding:8px">选项少</td></tr>
+    <tr><td style="padding:8px">Audacity</td><td style="padding:8px">需要编辑音频的用户</td><td style="padding:8px">实时</td><td style="padding:8px">一般</td><td style="padding:8px">需要虚拟声卡</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:8px">在线工具</td><td style="padding:8px">临时使用、手机用户</td><td style="padding:8px">取决于网速</td><td style="padding:8px">一般</td><td style="padding:8px">文件大小限制</td></tr>
+    <tr><td style="padding:8px">手机 App</td><td style="padding:8px">移动端用户</td><td style="padding:8px">中等</td><td style="padding:8px">有限</td><td style="padding:8px">平台限制</td></tr>
+  </table>
+
+  <h2>常见问题</h2>
+  <h3>提取出来的音频和视频不同步怎么办？</h3>
+  <p>使用 FFmpeg 时加入 <code>-async 1</code> 参数可以自动修正音视频同步问题。</p>
+
+  <h3>为什么有些在线视频提取不出音频？</h3>
+  <p>部分流媒体网站将音频和视频分离存储。先通过 <a href="/convert.html">M3U8在线工具</a> 找到完整的流媒体地址再下载，可以避免这个问题。详情参考我们的 <a href="how-to-find-m3u8.html">M3U8 地址查找教程</a>。</p>
+
+  <h3>MP3 和 AAC 选哪个？</h3>
+  <p>MP3 兼容性最好，所有设备都能播放。AAC 在同等码率下音质更好，文件更小，但部分老旧设备可能不兼容。如果追求通用性选 MP3，追求品质选 AAC。</p>
+
+  <p style="margin-top:32px">需要先下载在线视频？试试 <a href="/convert.html"><strong>M3U8 在线下载工具 →</strong></a></p>
+</main>
+
+<footer class="footer">
+  <ul class="footer-links">
+    <li><a href="/about.html">关于</a></li>
+    <li><a href="/privacy.html">隐私政策</a></li>
+    <li><a href="/terms.html">使用条款</a></li>
+    <li><a href="/contact.html">联系我们</a></li>
+  </ul>
+  <p>© 2026 M3U8在线工具</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "如何从在线视频中提取音频？5种免费方法",
+  "description": "从视频中提取音频的5种免费方法：FFmpeg命令行、在线工具、浏览器扩展、Audacity录制、VLC提取。支持 MP3/WAV/AAC。",
+  "datePublished": "2026-05-20",
+  "author": {"@type": "Organization", "name": "M3U8在线工具"},
+  "publisher": {"@type": "Organization", "name": "M3U8在线工具"}
+}
+</script>
+</body>
+</html>

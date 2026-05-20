@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FFmpeg 批量转换视频完整教程：一键批量转码、改格式、压缩视频。Windows/Mac/Linux 适用，含批处理脚本和常见参数详解。">
+  <meta name="keywords" content="FFmpeg批量转换, ffmpeg批处理, 视频批量转码, 批量MP4转换, ffmpeg批量命令, 视频格式批量转换">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://m3u8tomp4.com.cn/blog/ffmpeg-batch-convert.html">
+  <link rel="alternate" hreflang="zh" href="https://m3u8tomp4.com.cn/blog/ffmpeg-batch-convert.html">
+  <link rel="alternate" hreflang="x-default" href="https://m3u8tomp4.com.cn/blog/ffmpeg-batch-convert.html">
+  <meta property="og:title" content="FFmpeg 批量转换视频完整教程（批处理脚本） | M3U8在线工具">
+  <meta property="og:description" content="一键批量转码、改格式、压缩视频。Windows/Mac/Linux 批处理脚本详解，含 FFmpeg 常用参数说明。">
+  <meta property="og:url" content="https://m3u8tomp4.com.cn/blog/ffmpeg-batch-convert.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="M3U8在线工具">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="FFmpeg 批量转换视频完整教程（批处理脚本）">
+  <meta name="twitter:description" content="一键批量转码、改格式、压缩视频。Windows/Mac/Linux 批处理脚本详解。">
+  <title>FFmpeg 批量转换视频完整教程（批处理脚本） | M3U8在线工具</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3PwcUWLRlOTQ9dMa",ck:"3PwcUWLRlOTQ9dMa"})</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+    M3U8在线工具
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">首页</a></li>
+    <li><a href="/convert.html">在线转换</a></li>
+    <li><a href="/blog/">教程文章</a></li>
+    <li><a href="/about.html">关于</a></li>
+    <li><a href="/contact.html">联系</a></li>
+  </ul>
+</nav>
+
+<main class="content-page container">
+  <h1>FFmpeg 批量转换视频完整教程（批处理脚本）</h1>
+  <p style="color:var(--text-secondary)">发布：2026年5月 &nbsp;|&nbsp; 适用：Windows / Mac / Linux</p>
+
+  <h2>为什么需要批量转换？</h2>
+  <p>手上有十几个甚至几十个视频需要转换格式、压缩大小或者统一编码？一个一个手动输入命令不仅效率低下，还容易出错。FFmpeg 提供了强大的批处理能力，通过简单的脚本可以一键处理整个文件夹的视频。本教程将介绍三种最实用的批量转换方案。</p>
+
+  <h2>方案一：Windows 批处理脚本</h2>
+  <h3>批量将 TS 转为 MP4</h3>
+  <p>这是最常见的需求——从网上下载了一批 TS 分片文件，需要逐个转为 MP4。在视频目录创建 <code>convert.bat</code> 文件，内容如下：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>@echo off
+for %%i in (*.ts) do (
+    ffmpeg -i "%%i" -c copy -bsf:a aac_adtstoasc "%%~ni.mp4"
+)
+echo 所有转换完成！
+pause</code></pre>
+  <p>将 <code>convert.bat</code> 放在 TS 文件所在的文件夹，双击运行即可。每处理完一个 TS 文件，就会在同目录生成一个同名的 MP4 文件。</p>
+
+  <h3>批量压缩视频（减小文件体积）</h3>
+  <p>如果需要将一批高清视频压缩为适合手机观看的小文件：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>@echo off
+mkdir compressed
+for %%i in (*.mp4) do (
+    ffmpeg -i "%%i" -vf scale=1280:720 -c:v libx264 -crf 23 -c:a aac -b:a 128k "compressed\%%i"
+)
+echo 压缩完成！
+pause</code></pre>
+  <p>参数说明：<code>-vf scale=1280:720</code> 缩放到 720p，<code>-crf 23</code> 控制画质（数值越小画质越好，18-28 为常用范围），<code>-b:a 128k</code> 设置音频码率。压缩后的文件在 <code>compressed</code> 文件夹中。</p>
+
+  <h2>方案二：Mac / Linux Bash 脚本</h2>
+  <h3>批量转换视频格式</h3>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>#!/bin/bash
+for file in *.mkv; do
+    ffmpeg -i "$file" -c copy "${file%.mkv}.mp4"
+done
+echo "All conversions done!"</code></pre>
+  <p>保存为 <code>convert.sh</code>，运行 <code>chmod +x convert.sh && ./convert.sh</code> 即可。</p>
+
+  <h3>递归处理子文件夹</h3>
+  <p>如果视频分散在多个子文件夹中，使用 find 命令配合处理：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>#!/bin/bash
+find . -type f -name "*.ts" -exec sh -c '
+    for file; do
+        ffmpeg -i "$file" -c copy "${file%.ts}.mp4"
+    done
+' sh {} +</code></pre>
+
+  <h2>方案三：FFmpeg 内置批量功能</h2>
+  <p>FFmpeg 的 <code>concat demuxer</code> 不仅能合并文件，配合脚本还能实现高效的批量处理。如果多个视频需要统一格式，可以用下面的写法：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i input1.ts -i input2.ts -i input3.ts \
+  -map 0 -c:v libx264 -c:a aac output1.mp4 \
+  -map 1 -c:v libx264 -c:a aac output2.mp4 \
+  -map 2 -c:v libx264 -c:a aac output3.mp4</code></pre>
+  <p>这个命令一次性读入多个文件并分别输出，比多次启动 FFmpeg 更高效。</p>
+
+  <h2>常用 FFmpeg 参数速查</h2>
+  <table style="width:100%;border-collapse:collapse;margin:16px 0">
+    <tr style="background:var(--bg-secondary)"><th style="padding:8px;text-align:left">参数</th><th style="padding:8px;text-align:left">作用</th><th style="padding:8px;text-align:left">示例</th></tr>
+    <tr><td style="padding:8px"><code>-c copy</code></td><td style="padding:8px">无损拷贝，不重新编码</td><td style="padding:8px">最快，无画质损失</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:8px"><code>-c:v libx264</code></td><td style="padding:8px">使用 H.264 编码器</td><td style="padding:8px">兼容性最好</td></tr>
+    <tr><td style="padding:8px"><code>-c:v libx265</code></td><td style="padding:8px">使用 H.265/HEVC 编码器</td><td style="padding:8px">文件更小，画质相当</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:8px"><code>-crf 23</code></td><td style="padding:8px">恒定质量参数</td><td style="padding:8px">18=高质量, 23=默认, 28=小文件</td></tr>
+    <tr><td style="padding:8px"><code>-preset</code></td><td style="padding:8px">编码速度</td><td style="padding:8px">ultrafast/fast/medium/slow</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:8px"><code>-vf scale=W:H</code></td><td style="padding:8px">缩放视频分辨率</td><td style="padding:8px"><code>scale=1920:1080</code></td></tr>
+    <tr><td style="padding:8px"><code>-b:a 128k</code></td><td style="padding:8px">音频码率</td><td style="padding:8px">常见值 96k/128k/192k</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:8px"><code>-an</code></td><td style="padding:8px">移除音频轨道</td><td style="padding:8px">静音视频</td></tr>
+    <tr><td style="padding:8px"><code>-ss 00:01:00</code></td><td style="padding:8px">从指定时间开始</td><td style="padding:8px">裁剪视频开头</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:8px"><code>-t 00:00:30</code></td><td style="padding:8px">输出时长</td><td style="padding:8px">只取 30 秒</td></tr>
+  </table>
+
+  <h2>常见问题</h2>
+  <h3>批处理时个别文件报错怎么办？</h3>
+  <p>在批处理脚本中加入错误检查。Windows 脚本中使用 <code>if errorlevel 1</code> 判断；Bash 脚本中使用 <code>if [ $? -ne 0 ]</code>。还可以将错误日志输出到文件：<br><code>ffmpeg -i "$file" -c copy "out.mp4" 2>> error.log</code></p>
+
+  <h3>批量处理后如何自动删除原文件？</h3>
+  <p>在处理完并确认输出无误后，可以在脚本末尾加上删除命令。但强烈建议先检查输出文件是否正常生成再删除：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code># Bash 中先检查再删除
+if [ -f "output.mp4" ] && [ -s "output.mp4" ]; then
+    rm "original.ts"
+fi</code></pre>
+
+  <h3>有没有图形化批量工具？</h3>
+  <p>如果不想写脚本，可以用 HandBrake（免费开源，支持队列批量处理）或 Shutter Encoder（基于 FFmpeg，功能更全）。它们都有 Windows/Mac/Linux 版本，操作与 FFmpeg 命令逻辑一致。</p>
+
+  <p style="margin-top:32px">需要下载视频后再批量转换？试试我们的 <a href="/convert.html">M3U8 在线下载工具 →</a></p>
+</main>
+
+<footer class="footer">
+  <ul class="footer-links">
+    <li><a href="/about.html">关于</a></li>
+    <li><a href="/privacy.html">隐私政策</a></li>
+    <li><a href="/terms.html">使用条款</a></li>
+    <li><a href="/contact.html">联系我们</a></li>
+  </ul>
+  <p>© 2026 M3U8在线工具</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "FFmpeg 批量转换视频完整教程（批处理脚本）",
+  "description": "FFmpeg 一键批量转码、改格式、压缩视频。Windows/Mac/Linux 批处理脚本详解，含常用参数说明和常见问题。",
+  "datePublished": "2026-05-20",
+  "author": {"@type": "Organization", "name": "M3U8在线工具"},
+  "publisher": {"@type": "Organization", "name": "M3U8在线工具"}
+}
+</script>
+</body>
+</html>
