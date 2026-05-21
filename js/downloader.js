@@ -69,14 +69,16 @@ function startConversion() {
           show('success', 'MP4 转换完成，已自动下载');
           isConverting = false; if (btn) btn.disabled = false;
         }).catch(function(err) {
-          console.warn('MP4 remux failed, fallback to TS:', err);
+          console.error('MP4 remux failed:', err);
+          // Show error to user so we can debug
+          show('error', 'MP4 转换失败: ' + (err.message || err));
+          if (pt) pt.textContent = '转换失败，回退下载 TS 文件...';
+          // Fallback: download original TS
           var name = (xhr.getResponseHeader('Content-Disposition') || '').match(/filename="(.+)"/);
           var fn = name ? name[1] : 'video.ts';
           lastBlob = blob;
           triggerDownload(blob, fn);
           if (pf) pf.style.width = '100%';
-          if (pt) pt.textContent = T('dl_done') + fs(blob.size);
-          show('success', fn + ' ' + T('dl_ok') + '（TS 格式，可安装 FFmpeg 转 MP4）');
           isConverting = false; if (btn) btn.disabled = false;
         });
       } else {
