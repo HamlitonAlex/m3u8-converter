@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="-apple-system,Segoe UI,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="50%" stop-color="#16213e"/>
+      <stop offset="100%" stop-color="#0f3460"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="100%" stop-color="#764ba2"/>
+    </linearGradient>
+    <linearGradient id="mp4g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#11998e"/>
+      <stop offset="100%" stop-color="#38ef7d"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/></filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.03" stroke="#fff" stroke-width="1">
+    <line x1="0" y1="200" x2="1200" y2="200"/><line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="300" y1="0" x2="300" y2="630"/><line x1="600" y1="0" x2="600" y2="630"/><line x1="900" y1="0" x2="900" y2="630"/>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="80" text-anchor="middle" fill="#e0e0ff" font-size="36" font-weight="700" letter-spacing="2">M3U8 → MP4 Converter</text>
+  <text x="600" y="118" text-anchor="middle" fill="#8892b0" font-size="18">Free Online · No Install · Lossless Quality</text>
+
+  <!-- Flow: M3U8 box -->
+  <rect x="80" y="240" width="220" height="140" rx="16" fill="rgba(102,126,234,0.15)" stroke="url(#accent)" stroke-width="2" filter="url(#shadow)"/>
+  <text x="190" y="295" text-anchor="middle" fill="#667eea" font-size="48" font-weight="700">.m3u8</text>
+  <text x="190" y="335" text-anchor="middle" fill="#8892b0" font-size="14">HLS Playlist</text>
+  <text x="190" y="358" text-anchor="middle" fill="#5a6a9a" font-size="12">Index of .ts segments</text>
+
+  <!-- Arrow 1 -->
+  <path d="M310 310 L430 310" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+  <defs><marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#667eea"/></marker></defs>
+
+  <!-- TS segments box -->
+  <rect x="440" y="240" width="220" height="140" rx="16" fill="rgba(200,200,255,0.08)" stroke="#a0b0e0" stroke-width="2" filter="url(#shadow)"/>
+  <text x="550" y="290" text-anchor="middle" fill="#a0b0e0" font-size="28" font-weight="700">.ts segments</text>
+  <text x="550" y="320" text-anchor="middle" fill="#8892b0" font-size="14">Video chunks</text>
+  <rect x="495" y="335" width="110" height="22" rx="6" fill="rgba(160,176,224,0.12)"/>
+  <text x="550" y="351" text-anchor="middle" fill="#6a7aaa" font-size="11">001.ts 002.ts 003.ts …</text>
+
+  <!-- Arrow 2 -->
+  <path d="M670 310 L790 310" stroke="#a0b0e0" stroke-width="3" fill="none" marker-end="url(#arrowGray)"/>
+  <defs><marker id="arrowGray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a0b0e0"/></marker></defs>
+
+  <!-- Merged box -->
+  <rect x="800" y="240" width="190" height="140" rx="16" fill="rgba(17,153,142,0.12)" stroke="url(#mp4g)" stroke-width="2" filter="url(#shadow)"/>
+  <text x="895" y="285" text-anchor="middle" fill="#38ef7d" font-size="48" font-weight="700">.mp4</text>
+  <text x="895" y="325" text-anchor="middle" fill="#8892b0" font-size="14">Standard MP4</text>
+  <text x="895" y="350" text-anchor="middle" fill="#5a8a7a" font-size="12">Playable everywhere</text>
+
+  <!-- Bottom features -->
+  <g transform="translate(0,460)">
+    <rect x="80" y="0" width="320" height="80" rx="12" fill="rgba(255,255,255,0.03)"/>
+    <text x="100" y="35" fill="#667eea" font-size="18" font-weight="600">Lossless</text>
+    <text x="100" y="58" fill="#6a7aaa" font-size="13">No re-encoding, identical quality to original</text>
+
+    <rect x="440" y="0" width="320" height="80" rx="12" fill="rgba(255,255,255,0.03)"/>
+    <text x="460" y="35" fill="#667eea" font-size="18" font-weight="600">Browser-based</text>
+    <text x="460" y="58" fill="#6a7aaa" font-size="13">No software install, runs in your browser</text>
+
+    <rect x="800" y="0" width="320" height="80" rx="12" fill="rgba(255,255,255,0.03)"/>
+    <text x="820" y="35" fill="#667eea" font-size="18" font-weight="600">100% Free</text>
+    <text x="820" y="58" fill="#6a7aaa" font-size="13">No registration, no limits, no hidden fees</text>
+  </g>
+</svg>

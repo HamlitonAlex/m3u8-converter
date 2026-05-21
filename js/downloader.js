@@ -1,4 +1,4 @@
-// M3U8 在线播放 + 下载
+// M3U8 在线播放 + M3U8→MP4 下载
 var CORS_PROXY = 'https://proxy-lgceaujdmq.cn-hangzhou.fcapp.run/';
 var REWRITE = CORS_PROXY + 'rewrite/';
 var MERGE = CORS_PROXY + 'merge/';
@@ -18,7 +18,17 @@ window.addEventListener('langChange', function() {
   if (inp) inp.placeholder = T('convert_placeholder');
 });
 
-// ============ 下载 ============
+function triggerDownload(blob, filename) {
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function() { URL.revokeObjectURL(a.href); }, 2000);
+}
+
+// ============ M3U8 → MP4 下载 ============
 function startConversion() {
   if (isConverting) return;
   var inp = $('m3u8Url'), url = inp ? inp.value.trim() : '';
@@ -35,27 +45,67 @@ function startConversion() {
   xhr.responseType = 'blob'; xhr.timeout = 600000;
 
   xhr.onprogress = function(e) {
-    if (e.lengthComputable && pt && pf) { pf.style.width = Math.round(e.loaded/e.total*90) + '%'; pt.textContent = T('dl_ing') + Math.round(e.loaded/e.total*100) + '% (' + fs(e.loaded) + ')'; }
+    if (e.lengthComputable && pt && pf) {
+      pf.style.width = Math.round(e.loaded/e.total*90) + '%';
+      pt.textContent = T('dl_ing') + Math.round(e.loaded/e.total*100) + '% (' + fs(e.loaded) + ')';
+    }
   };
 
   xhr.onload = function() {
     if (xhr.status === 200) {
       var blob = xhr.response;
-      var name = (xhr.getResponseHeader('Content-Disposition') || '').match(/filename="(.+)"/);
-      var fn = name ? name[1] : 'video.ts';
-      lastBlob = blob;
-      var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = fn;
-      document.body.appendChild(a); a.click(); document.body.removeChild(a);
-      if (pf) pf.style.width = '100%'; if (pt) pt.textContent = T('dl_done') + fs(blob.size);
-      show('success', fn + T('dl_ok'));
-    } else { show('error', T('dl_err_server') + xhr.status); }
+      if (pf) pf.style.width = '95%';
+
+      // client-side TS→MP4 remux
+      if (window.ts2mp4) {
+        if (pt) pt.textContent = '正在加载 MP4 转换引擎...';
+        window.ts2mp4(blob, function(phase) {
+          if (pt) pt.textContent = phase;
+        }).then(function(mp4Blob) {
+          lastBlob = mp4Blob;
+          triggerDownload(mp4Blob, 'video.mp4');
+          if (pf) pf.style.width = '100%';
+          if (pt) pt.textContent = '完成！MP4 文件: ' + fs(mp4Blob.size);
+          show('success', 'MP4 转换完成，已自动下载');
+          isConverting = false; if (btn) btn.disabled = false;
+        }).catch(function(err) {
+          console.warn('MP4 remux failed, fallback to TS:', err);
+          var name = (xhr.getResponseHeader('Content-Disposition') || '').match(/filename="(.+)"/);
+          var fn = name ? name[1] : 'video.ts';
+          lastBlob = blob;
+          triggerDownload(blob, fn);
+          if (pf) pf.style.width = '100%';
+          if (pt) pt.textContent = T('dl_done') + fs(blob.size);
+          show('success', fn + ' ' + T('dl_ok') + '（TS 格式，可安装 FFmpeg 转 MP4）');
+          isConverting = false; if (btn) btn.disabled = false;
+        });
+      } else {
+        // ts2mp4 not loaded
+        var name = (xhr.getResponseHeader('Content-Disposition') || '').match(/filename="(.+)"/);
+        var fn = name ? name[1] : 'video.ts';
+        lastBlob = blob;
+        triggerDownload(blob, fn);
+        if (pf) pf.style.width = '100%';
+        if (pt) pt.textContent = T('dl_done') + fs(blob.size);
+        show('success', fn + ' ' + T('dl_ok'));
+        isConverting = false; if (btn) btn.disabled = false;
+      }
+    } else {
+      show('error', T('dl_err_server') + xhr.status);
+      isConverting = false; if (btn) btn.disabled = false;
+    }
+  };
+  xhr.onerror = function() {
+    show('error', T('dl_err_conn'));
     isConverting = false; if (btn) btn.disabled = false;
   };
-  xhr.onerror = function() { show('error', T('dl_err_conn')); isConverting = false; if (btn) btn.disabled = false; };
   xhr.send();
 }
 
-function downloadFile() { if (!lastBlob) return; var n = 'video.ts'; var a = document.createElement('a'); a.href = URL.createObjectURL(lastBlob); a.download = n; document.body.appendChild(a); a.click(); document.body.removeChild(a); }
+function downloadFile() {
+  if (!lastBlob) return;
+  triggerDownload(lastBlob, 'video.mp4');
+}
 
 // ============ 播放 ============
 function playM3u8() {

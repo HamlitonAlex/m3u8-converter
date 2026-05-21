@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="-apple-system,Segoe UI,sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1b2a"/>
+      <stop offset="100%" stop-color="#1b2838"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e94560"/>
+      <stop offset="100%" stop-color="#f39c12"/>
+    </linearGradient>
+    <filter id="shadow2"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/></filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+  <g opacity="0.03" stroke="#fff" stroke-width="1">
+    <line x1="0" y1="200" x2="1200" y2="200"/><line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="400" y1="0" x2="400" y2="630"/><line x1="800" y1="0" x2="800" y2="630"/>
+  </g>
+
+  <text x="600" y="70" text-anchor="middle" fill="#e0e0ff" font-size="34" font-weight="700">How to Download Streaming Videos</text>
+  <text x="600" y="105" text-anchor="middle" fill="#8892b0" font-size="16">Universal M3U8/HLS extraction method — works on most streaming sites</text>
+
+  <!-- Step 1 -->
+  <rect x="60" y="180" width="340" height="200" rx="16" fill="rgba(233,69,96,0.08)" stroke="rgba(233,69,96,0.3)" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="230" y="225" text-anchor="middle" fill="#e94560" font-size="18" font-weight="700">1. Open DevTools</text>
+  <text x="230" y="255" text-anchor="middle" fill="#8892b0" font-size="13">Press F12 in your browser</text>
+  <rect x="100" y="275" width="260" height="80" rx="8" fill="rgba(0,0,0,0.3)"/>
+  <text x="230" y="300" text-anchor="middle" fill="#6a7aaa" font-size="12" font-family="monospace">Network tab → Filter: "m3u8"</text>
+  <text x="230" y="325" text-anchor="middle" fill="#6a7aaa" font-size="12" font-family="monospace">→ Find .m3u8 file in list</text>
+  <text x="230" y="345" text-anchor="middle" fill="#5a6a5a" font-size="11" font-family="monospace">→ Right-click → Copy URL</text>
+
+  <!-- Arrow -->
+  <path d="M410 370 L500 370" stroke="#e94560" stroke-width="2" fill="none" marker-end="url(#arr1)"/>
+  <defs><marker id="arr1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#e94560"/></marker></defs>
+
+  <!-- Step 2 -->
+  <rect x="510" y="180" width="340" height="200" rx="16" fill="rgba(102,126,234,0.08)" stroke="rgba(102,126,234,0.3)" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="680" y="225" text-anchor="middle" fill="#667eea" font-size="18" font-weight="700">2. Paste & Convert</text>
+  <text x="680" y="255" text-anchor="middle" fill="#8892b0" font-size="13">Go to our converter tool</text>
+  <rect x="550" y="275" width="260" height="80" rx="8" fill="rgba(0,0,0,0.3)"/>
+  <text x="680" y="300" text-anchor="middle" fill="#6a7aaa" font-size="12">Paste M3U8 URL into input</text>
+  <text x="680" y="325" text-anchor="middle" fill="#6a7aaa" font-size="12">Click "Convert to MP4"</text>
+  <text x="680" y="345" text-anchor="middle" fill="#5a8a5a" font-size="12">Wait for automatic conversion</text>
+
+  <!-- Step 3 -->
+  <path d="M860 370 L950 370" stroke="#667eea" stroke-width="2" fill="none" marker-end="url(#arr2)"/>
+  <defs><marker id="arr2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#667eea"/></marker></defs>
+
+  <rect x="960" y="180" width="180" height="200" rx="16" fill="rgba(56,239,125,0.08)" stroke="rgba(56,239,125,0.3)" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="1050" y="240" text-anchor="middle" fill="#38ef7d" font-size="80">✓</text>
+  <text x="1050" y="290" text-anchor="middle" fill="#38ef7d" font-size="18" font-weight="700">3. Done!</text>
+  <text x="1050" y="318" text-anchor="middle" fill="#8892b0" font-size="13">MP4 file</text>
+  <text x="1050" y="340" text-anchor="middle" fill="#8892b0" font-size="13">auto-downloads</text>
+
+  <!-- Bottom info -->
+  <g transform="translate(0,430)">
+    <rect x="60" y="0" width="1080" height="80" rx="12" fill="rgba(255,255,255,0.03)"/>
+    <text x="600" y="35" text-anchor="middle" fill="#667eea" font-size="15" font-weight="600">Works on most streaming sites · No paid software needed · Browser-based · 100% Free</text>
+    <text x="600" y="60" text-anchor="middle" fill="#6a7aaa" font-size="13">If M3U8 link doesn't appear: try our sniffer tools guide or check if the site uses DRM protection</text>
+  </g>
+</svg>
