@@ -1,0 +1,109 @@
+/* Blog visual enhancements — hero banners, step illustrations, info boxes */
+.blog-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0ea5e9 100%);
+  border-radius: 12px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  min-height: 200px;
+}
+.blog-hero svg { width: 100%; max-width: 800px; height: auto; }
+
+/* Step illustration row */
+.step-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+.step-card {
+  flex: 1 1 150px;
+  background: var(--bg-secondary, #f8fafc);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+.step-card .step-num {
+  width: 36px; height: 36px;
+  background: var(--accent, #0ea5e9);
+  color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.step-card .step-icon { font-size: 2rem; margin-bottom: 6px; }
+
+/* Info callout box */
+.info-box {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-left: 4px solid #3b82f6;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-size: 0.95rem;
+}
+
+/* Warning callout */
+.warn-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-left: 4px solid #f59e0b;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-size: 0.95rem;
+}
+
+/* Comparison table styling */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.9rem;
+}
+.compare-table th {
+  background: var(--bg-secondary, #f1f5f9);
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-color, #cbd5e1);
+}
+.compare-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  vertical-align: top;
+}
+.compare-table tr:nth-child(even) td { background: rgba(248,250,252,0.5); }
+
+/* Code block with fake syntax highlighting */
+pre.code-block {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 18px 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin: 16px 0;
+  border: 1px solid #334155;
+}
+pre.code-block .kw { color: #c084fc; }   /* keywords */
+pre.code-block .str { color: #86efac; }  /* strings */
+pre.code-block .cm { color: #64748b; }   /* comments */
+pre.code-block .opt { color: #fbbf24; }  /* options/flags */
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .step-card { background: #1e293b; border-color: #334155; }
+  .info-box { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+  .warn-box { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); }
+  .compare-table th { background: #1e293b; }
+  .compare-table tr:nth-child(even) td { background: rgba(30,41,59,0.3); }
+}
