@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="5种方法录制在线直播视频并保存到本地：用OBS Studio、FFmpeg命令行、浏览器扩展、VLC播放器、专业录屏工具。涵盖直播流捕获、M3U8直播录制、定时录制。">
+  <meta name="keywords" content="录制直播, 直播视频保存, OBS录制, FFmpeg录屏, 直播流下载, M3U8直播录制, 定时录制, screen recording, 直播回放">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://m3u8tomp4.com.cn/blog/record-live-streaming-video.html">
+  <link rel="alternate" hreflang="zh" href="https://m3u8tomp4.com.cn/blog/record-live-streaming-video.html">
+  <link rel="alternate" hreflang="x-default" href="https://m3u8tomp4.com.cn/blog/record-live-streaming-video.html">
+  <meta property="og:title" content="如何录制在线直播视频并保存到本地（5种方法） | M3U8在线工具">
+  <meta property="og:description" content="5种方法录制在线直播视频并保存到本地：OBS、FFmpeg、浏览器扩展、VLC和专业录屏工具全覆盖。">
+  <meta property="og:url" content="https://m3u8tomp4.com.cn/blog/record-live-streaming-video.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="M3U8在线工具">
+  <meta property="og:image" content="https://m3u8tomp4.com.cn/blog/images/m3u8-to-mp4-flow.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="如何录制在线直播视频并保存到本地（5种方法）">
+  <meta name="twitter:description" content="5种方法录制在线直播视频并保存到本地：OBS、FFmpeg、浏览器扩展、VLC全覆盖。">
+  <title>如何录制在线直播视频并保存到本地（5种方法） | M3U8在线工具</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3PwcUWLRlOTQ9dMa",ck:"3PwcUWLRlOTQ9dMa"})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-XXXXXXXXXX");</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+    M3U8在线工具
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">首页</a></li>
+    <li><a href="/convert.html">在线转换</a></li>
+    <li><a href="/guide.html">使用教程</a></li>
+    <li><a href="/about.html">关于</a></li>
+    <li><a href="/contact.html">联系</a></li>
+  </ul>
+</nav>
+
+<main class="content-page container">
+  <h1>如何录制在线直播视频并保存到本地（5种方法详解）</h1>
+  <p style="color:var(--text-secondary)">发布：2026年5月23日 &nbsp;|&nbsp; 适用：Windows / Mac / Linux</p>
+
+  <h2>为什么需要录制直播？</h2>
+  <p>直播间的内容往往是"一次性"的——主播下播后，回放可能不会保留。无论是想保存重要会议、在线课程、游戏直播还是演出回放，掌握直播录制技能都能让你不错过任何精彩内容。本文整理了5种录制在线直播的主流方法，从免费开源方案到专业级工具，覆盖不同使用场景。</p>
+
+  <h2>方法一：OBS Studio（推荐）—— 免费开源、功能最强</h2>
+  <p><strong>OBS Studio</strong> 是目前最受欢迎的开源录屏和直播推流软件，完全免费，支持 Windows / Mac / Linux。它不仅能录制屏幕，还能捕获特定窗口、浏览器标签页，甚至摄像头和麦克风。</p>
+
+  <h3>OBS 录制直播步骤</h3>
+  <ol>
+    <li>前往 <a href="https://obsproject.com/" target="_blank">obsproject.com</a> 下载并安装 OBS Studio</li>
+    <li>打开 OBS，点击左下角 "+" 号创建"场景"，例如命名为"直播录制"</li>
+    <li>在"来源"区域点击 "+"，根据需求选择：
+      <ul>
+        <li><strong>显示器采集</strong>：录制整个屏幕</li>
+        <li><strong>窗口采集</strong>：只录制浏览器或播放器窗口</li>
+        <li><strong>浏览器</strong>：OBS 内置浏览器直接打开直播页面</li>
+      </ul>
+    </li>
+    <li>点击右下角"设置" → "输出"，设置录制格式为 MP4 或 MKV（建议 MKV，防意外中断丢失文件）</li>
+    <li>在"视频"选项中设置输出分辨率和帧率（一般 1080p / 30fps 足够）</li>
+    <li>回到主界面，点击"开始录制"即可</li>
+  </ol>
+  <p><strong>优点</strong>：完全免费、画质可控、支持多场景切换、可同时录制摄像头和麦克风。<br><strong>缺点</strong>：学习曲线略高，初次配置需要花时间。</p>
+
+  <h2>方法二：FFmpeg —— 命令行极客首选</h2>
+  <p>如果你熟悉命令行，FFmpeg 是录制直播最轻量的方式。它不需要安装任何图形界面软件，一条命令搞定。</p>
+
+  <h3>录制屏幕（Windows）</h3>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -f gdigrab -framerate 30 -i desktop -c:v libx264 -preset fast output.mp4</code></pre>
+
+  <h3>直接录制 M3U8 直播流</h3>
+  <p>很多直播平台使用 HLS（M3U8）协议推流。你可以直接用 FFmpeg 捕获直播流并保存：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i "https://example.com/live/stream.m3u8" -c copy -t 01:00:00 live-recording.mp4</code></pre>
+  <p><code>-c copy</code> 无损保存原始流，<code>-t 01:00:00</code> 限制录制时长1小时。</p>
+
+  <h3>定时录制（Mac / Linux）</h3>
+  <p>结合 <code>timeout</code> 命令实现定时录制：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>timeout 3600 ffmpeg -i "直播流URL" -c copy output.mp4</code></pre>
+
+  <h2>方法三：VLC 播放器 —— 自带录制功能</h2>
+  <p>VLC 不仅是万能播放器，还能录制网络流和屏幕。</p>
+  <ol>
+    <li>打开 VLC，点击"媒体" → "打开网络串流"（或 Ctrl+N）</li>
+    <li>输入直播流地址（如 M3U8 链接），点击"播放"</li>
+    <li>在播放过程中，点击"播放"菜单 → "录制"（或按 Shift+R），VLC 开始将流保存到本地</li>
+    <li>再按一次 Shift+R 停止录制</li>
+  </ol>
+  <p>录制文件默认保存在系统的"视频"或"VLC"文件夹中，格式为 MP4。此方法适合偶尔录制、不想装额外软件的用户。</p>
+
+  <h2>方法四：浏览器扩展 —— 一键录制网页内容</h2>
+  <p>如果你只需要录制浏览器中正在播放的直播，浏览器扩展是最便捷的选择。</p>
+  <ul>
+    <li><strong>Screenity</strong>（Chrome 扩展）：免费开源，支持录制标签页、整个屏幕、摄像头画中画</li>
+    <li><strong>Loom</strong>：适合录制讲解类内容，自动上传云端</li>
+    <li><strong>Vimeo Record</strong>：免费无限录制，Gmail 一键登录</li>
+  </ul>
+  <p>安装后在浏览器工具栏点击扩展图标，选择录制范围（标签页 / 窗口 / 整个屏幕），点击开始即可。</p>
+
+  <h2>方法五：专业录屏工具</h2>
+  <p>如果需要更高级的功能（如定时录制、自动剪辑、添加标注），可以考虑以下付费工具：</p>
+  <ul>
+    <li><strong>Bandicam</strong>：轻量级，支持硬件加速，画质优秀（Windows）</li>
+    <li><strong>ScreenFlow</strong>：Mac 平台最强录屏 + 编辑一体工具</li>
+    <li><strong>Camtasia</strong>：录屏 + 视频编辑一体化，适合制作教学内容</li>
+  </ul>
+
+  <h2>录制直播的注意事项</h2>
+  <h3>版权问题</h3>
+  <p>录制直播前请确认内容的版权归属。个人学习、研究用途通常属于合理使用范畴，但公开发布或商业使用录制内容可能侵犯版权。部分平台（如 YouTube、Twitch）在服务条款中明确禁止未经授权的录制。</p>
+
+  <h3>存储空间</h3>
+  <p>1080p 直播每小时约占用 2-4GB（取决于码率）。录制前确保硬盘有足够空间。建议使用 H.265 编码或调低码率来减小文件体积。</p>
+
+  <h3>音频同步</h3>
+  <p>有时录制后会出现音画不同步。OBS 可以在"高级音频属性"中手动调整音频延迟；FFmpeg 可以添加 <code>-async 1</code> 参数自动修正。</p>
+
+  <h2>总结：哪种方法最适合你？</h2>
+  <table style="width:100%;border-collapse:collapse;margin:16px 0">
+    <tr style="background:var(--bg-secondary)"><th style="padding:12px;text-align:left;border:1px solid var(--border)">方法</th><th style="padding:12px;text-align:left;border:1px solid var(--border)">适用人群</th><th style="padding:12px;text-align:left;border:1px solid var(--border)">难度</th><th style="padding:12px;text-align:left;border:1px solid var(--border)">费用</th></tr>
+    <tr><td style="padding:10px;border:1px solid var(--border)">OBS Studio</td><td style="padding:10px;border:1px solid var(--border)">需要高质量录制的用户</td><td style="padding:10px;border:1px solid var(--border)">中等</td><td style="padding:10px;border:1px solid var(--border)">免费</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:10px;border:1px solid var(--border)">FFmpeg 命令行</td><td style="padding:10px;border:1px solid var(--border)">开发者、自动化脚本</td><td style="padding:10px;border:1px solid var(--border)">较高</td><td style="padding:10px;border:1px solid var(--border)">免费</td></tr>
+    <tr><td style="padding:10px;border:1px solid var(--border)">VLC 播放器</td><td style="padding:10px;border:1px solid var(--border)">只需偶尔录制的用户</td><td style="padding:10px;border:1px solid var(--border)">简单</td><td style="padding:10px;border:1px solid var(--border)">免费</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:10px;border:1px solid var(--border)">浏览器扩展</td><td style="padding:10px;border:1px solid var(--border)">只录网页内容的用户</td><td style="padding:10px;border:1px solid var(--border)">简单</td><td style="padding:10px;border:1px solid var(--border)">免费</td></tr>
+    <tr><td style="padding:10px;border:1px solid var(--border)">专业录屏工具</td><td style="padding:10px;border:1px solid var(--border)">专业内容创作者</td><td style="padding:10px;border:1px solid var(--border)">中等</td><td style="padding:10px;border:1px solid var(--border)">付费</td></tr>
+  </table>
+  <p>对大多数用户来说，<strong>OBS Studio</strong> 是最佳选择——免费、强大、跨平台。如果你只需要快速录制一段 M3U8 直播流，<strong>FFmpeg 命令行</strong>是最简单粗暴的方式。</p>
+
+<section class="related-articles" style="margin-top:40px;padding:24px;background:var(--bg-secondary,#f0f4f8);border-radius:8px">
+<h3 style="margin-top:0">📖 相关文章</h3>
+<ul style="list-style:none;padding:0">
+<li style="margin:8px 0"><a href="/blog/hls-streaming-explained.html">HLS 流媒体技术详解：M3U8 协议深入理解</a></li>
+<li style="margin:8px 0"><a href="/blog/download-m3u8-video-free.html">免费下载 M3U8 视频的完整教程</a></li>
+<li style="margin:8px 0"><a href="/blog/ffmpeg-batch-convert.html">FFmpeg 批量转换视频文件终极教程</a></li>
+<li style="margin:8px 0"><a href="/blog/vlc-play-m3u8.html">如何用 VLC 播放和下载 M3U8 视频</a></li>
+</ul>
+</section>
+</main>
+
+<footer class="footer">
+  <ul class="footer-links">
+    <li><a href="/about.html">关于</a></li>
+    <li><a href="/privacy.html">隐私政策</a></li>
+    <li><a href="/terms.html">使用条款</a></li>
+    <li><a href="/contact.html">联系我们</a></li>
+  </ul>
+  <p>© 2026 M3U8在线工具</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "如何录制在线直播视频并保存到本地（5种方法详解）",
+  "description": "5种方法录制在线直播视频并保存到本地：用OBS Studio、FFmpeg命令行、浏览器扩展、VLC播放器、专业录屏工具。涵盖直播流捕获、M3U8直播录制、定时录制。",
+  "datePublished": "2026-05-23",
+  "dateModified": "2026-05-23",
+  "author": {"@type": "Organization", "name": "M3U8在线工具"},
+  "publisher": {"@type": "Organization", "name": "M3U8在线工具"}
+}
+</script>
+</body>
+</html>

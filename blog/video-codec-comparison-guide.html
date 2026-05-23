@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="视频编码格式完全指南：H.264、H.265/HEVC、AV1、VP9 四种主流编码对比。码率、画质、兼容性、文件大小一目了然，帮你选择最适合的视频编码。">
+  <meta name="keywords" content="视频编码, H.264, H.265, HEVC, AV1, VP9, 视频压缩, 码率, 画质对比, 视频转码, 编码器选择">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://m3u8tomp4.com.cn/blog/video-codec-comparison-guide.html">
+  <link rel="alternate" hreflang="zh" href="https://m3u8tomp4.com.cn/blog/video-codec-comparison-guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://m3u8tomp4.com.cn/blog/video-codec-comparison-guide.html">
+  <meta property="og:title" content="视频编码格式完全指南：H.264 vs H.265 vs AV1 怎么选 | M3U8在线工具">
+  <meta property="og:description" content="H.264、H.265/HEVC、AV1、VP9 四种主流视频编码格式详解：画质、码率、兼容性对比，帮你做出最佳选择。">
+  <meta property="og:url" content="https://m3u8tomp4.com.cn/blog/video-codec-comparison-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="M3U8在线工具">
+  <meta property="og:image" content="https://m3u8tomp4.com.cn/blog/images/m3u8-to-mp4-flow.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="视频编码格式完全指南：H.264 vs H.265 vs AV1 怎么选">
+  <meta name="twitter:description" content="H.264、H.265/HEVC、AV1、VP9 四种视频编码对比，从码率到兼容性全面解析。">
+  <title>视频编码格式完全指南：H.264 vs H.265 vs AV1 怎么选 | M3U8在线工具</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3PwcUWLRlOTQ9dMa",ck:"3PwcUWLRlOTQ9dMa"})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-XXXXXXXXXX");</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+    M3U8在线工具
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">首页</a></li>
+    <li><a href="/convert.html">在线转换</a></li>
+    <li><a href="/guide.html">使用教程</a></li>
+    <li><a href="/about.html">关于</a></li>
+    <li><a href="/contact.html">联系</a></li>
+  </ul>
+</nav>
+
+<main class="content-page container">
+  <h1>视频编码格式完全指南：H.264 vs H.265 vs AV1 怎么选</h1>
+  <p style="color:var(--text-secondary)">发布：2026年5月23日 &nbsp;|&nbsp; 适用：视频创作者、开发者、普通用户</p>
+
+  <h2>为什么视频编码很重要？</h2>
+  <p>同一个视频，用不同编码格式压缩，文件大小可能差3-5倍，而画质几乎看不出区别。选对编码格式意味着：上传更快、存储更省、播放更流畅。但编码器选错了，可能遇到"转换半天画质糊了""iPhone上放不了""上传平台审核不过"等问题。本文从实用角度出发，讲清四种主流编码的差异和选择逻辑。</p>
+
+  <h2>四种主流视频编码一览</h2>
+  <table style="width:100%;border-collapse:collapse;margin:16px 0">
+    <tr style="background:var(--bg-secondary)"><th style="padding:12px;text-align:left;border:1px solid var(--border)">编码</th><th style="padding:12px;text-align:left;border:1px solid var(--border)">发布年份</th><th style="padding:12px;text-align:left;border:1px solid var(--border)">压缩效率</th><th style="padding:12px;text-align:left;border:1px solid var(--border)">兼容性</th><th style="padding:12px;text-align:left;border:1px solid var(--border)">授权费用</th></tr>
+    <tr><td style="padding:10px;border:1px solid var(--border)">H.264 (AVC)</td><td style="padding:10px;border:1px solid var(--border)">2003</td><td style="padding:10px;border:1px solid var(--border)">基准线 1x</td><td style="padding:10px;border:1px solid var(--border)">★★★★★</td><td style="padding:10px;border:1px solid var(--border)">需授权</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:10px;border:1px solid var(--border)">H.265 (HEVC)</td><td style="padding:10px;border:1px solid var(--border)">2013</td><td style="padding:10px;border:1px solid var(--border)">比 H.264 省 50%</td><td style="padding:10px;border:1px solid var(--border)">★★★★☆</td><td style="padding:10px;border:1px solid var(--border)">多重专利费</td></tr>
+    <tr><td style="padding:10px;border:1px solid var(--border)">AV1</td><td style="padding:10px;border:1px solid var(--border)">2018</td><td style="padding:10px;border:1px solid var(--border)">比 H.264 省 60%+</td><td style="padding:10px;border:1px solid var(--border)">★★★☆☆</td><td style="padding:10px;border:1px solid var(--border)">完全免费</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:10px;border:1px solid var(--border)">VP9</td><td style="padding:10px;border:1px solid var(--border)">2013</td><td style="padding:10px;border:1px solid var(--border)">比 H.264 省 40%+</td><td style="padding:10px;border:1px solid var(--border)">★★★★☆</td><td style="padding:10px;border:1px solid var(--border)">免费</td></tr>
+  </table>
+
+  <h2>H.264 (AVC) —— 万能兼容之王</h2>
+  <p>H.264 是目前使用最广泛的视频编码，几乎所有设备都原生支持——从十年前的旧手机到最新的 8K 电视。它是流媒体、在线视频、监控录像和蓝光光盘的默认选择。</p>
+  <h3>优点</h3>
+  <ul>
+    <li><strong>极致兼容性</strong>：任何播放器、浏览器、设备都能播放，无需装额外解码器</li>
+    <li><strong>编码速度快</strong>：成熟的硬件加速生态（Intel QSV、NVIDIA NVENC、Apple VideoToolbox）</li>
+    <li><strong>生态完整</strong>：所有视频编辑软件、剪辑工具、平台的默认导出格式</li>
+  </ul>
+  <h3>缺点</h3>
+  <ul>
+    <li>压缩效率偏低：相同画质下文件比 H.265 大约 50%</li>
+    <li>不支持 8K 以上超高清分辨率的高效压缩</li>
+    <li>商业使用需支付专利授权费（MPEG LA 专利池）</li>
+  </ul>
+  <h3>什么时候选 H.264？</h3>
+  <p>当你需要<strong>确保任何设备都能播放</strong>时——比如发给客户的样片、上传社交媒体、在微信里分享视频。H.264 是最安全的选择。</p>
+
+  <h2>H.265 (HEVC) —— 高效压缩的中坚力量</h2>
+  <p>H.265 是 H.264 的继任者，在同等画质下可将文件体积减半。iPhone 从 2017 年（iOS 11）开始默认使用 HEVC 拍摄视频，4K 蓝光也采用 H.265 编码。</p>
+  <h3>优点</h3>
+  <ul>
+    <li>大幅节省存储：4K 视频从 H.264 的 30GB/小时降到约 15GB/小时</li>
+    <li>支持 HDR（高动态范围）和广色域，画面更真实</li>
+    <li>现代设备（iPhone 7+、Android 5.0+、主流浏览器逐步支持）</li>
+  </ul>
+  <h3>缺点</h3>
+  <ul>
+    <li><strong>专利授权复杂</strong>：涉及三个不同的专利池（MPEG LA、HEVC Advance、Velos Media），费用高昂</li>
+    <li>部分旧设备（Windows 7 默认不支持、旧版 Android 无法硬解）</li>
+    <li>软件编码速度远慢于 H.264</li>
+  </ul>
+  <h3>什么时候选 H.265？</h3>
+  <p>当你需要<strong>高质量 + 小体积</strong>时——比如存储大量 4K 视频素材、上传视频到 B站/YouTube（它们都支持 HEVC 上传）、录制 iPhone 视频后想保留原始质量但减小体积。</p>
+
+  <h2>AV1 —— 开源免费的未来标准</h2>
+  <p>AV1 由 Google、Netflix、Amazon、Apple、Microsoft 等组成的开放媒体联盟（AOMedia）共同开发，目标是替代 H.265 成为下一代主流编码，且<strong>完全免专利费</strong>。</p>
+  <h3>优点</h3>
+  <ul>
+    <li>压缩率最高：同等画质比 H.264 节省 60% 以上带宽</li>
+    <li>完全免费开源，无任何专利授权成本</li>
+    <li>Netflix、YouTube、B站、Twitch 等平台已在积极部署</li>
+  </ul>
+  <h3>缺点</h3>
+  <ul>
+    <li><strong>编码极慢</strong>：软件编码速度仅为 H.264 的 1/10 到 1/20（但新一代硬件加速正在改善）</li>
+    <li>老设备不支持（需 NVIDIA RTX 30 系列以上、Intel 11 代以上等才支持硬解）</li>
+    <li>部分编辑软件尚未支持导入</li>
+  </ul>
+  <h3>什么时候选 AV1？</h3>
+  <p>当你需要<strong>最小文件体积</strong>且不急着要结果时——比如长期归档大量视频、网站视频流降低成本、面向未来保存。用 FFmpeg 软件编码 AV1 一晚上转换几十个视频非常划算。</p>
+
+  <h2>VP9 —— YouTube 的主力编码</h2>
+  <p>VP9 是 Google 开发的免费编码，主要用于 YouTube 平台。你在 YouTube 上看的绝大多数视频其实都在用 VP9 解码。与 H.265 同年代，压缩效率相当。</p>
+  <h3>优点</h3>
+  <ul>
+    <li>免费使用，无专利负担</li>
+    <li>YouTube 生态深度优化</li>
+    <li>主流浏览器（Chrome、Firefox、Edge）原生支持</li>
+  </ul>
+  <h3>缺点</h3>
+  <ul>
+    <li>Apple 生态支持有限（Safari 直到较晚版本才支持，iOS 上部分场景回退到 H.264）</li>
+    <li>硬解普及度不如 H.264/H.265</li>
+    <li>逐渐被 AV1 取代，新项目不建议优先考虑</li>
+  </ul>
+
+  <h2>用 FFmpeg 快速转码到不同编码</h2>
+  <h3>转为 H.264（兼容性最优）</h3>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k output_h264.mp4</code></pre>
+  <p><code>-crf 23</code> 是质量和体积的平衡点（数值越小质量越高，18-28 可调），<code>preset medium</code> 是编码速度中等的设置。</p>
+
+  <h3>转为 H.265（4K 视频推荐）</h3>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i input.mp4 -c:v libx265 -crf 28 -preset medium -c:a aac -b:a 128k output_h265.mp4</code></pre>
+  <p>H.265 的 CRF 建议 28 左右（和 H.264 的 23 画质相当），因为它的压缩效率更高。</p>
+
+  <h3>转为 AV1（长期归档首选）</h3>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i input.mp4 -c:v libsvtav1 -crf 35 -preset 8 -c:a libopus -b:a 96k output_av1.webm</code></pre>
+  <p>AV1 编码建议用 <code>libsvtav1</code> 编码器（比默认 libaom 快），<code>preset 8</code> 是速度优先（0-13，数值越大越快但压缩率略降）。</p>
+
+  <h2>选择建议：一图看懂</h2>
+  <table style="width:100%;border-collapse:collapse;margin:16px 0">
+    <tr style="background:var(--bg-secondary)"><th style="padding:12px;text-align:left;border:1px solid var(--border)">场景</th><th style="padding:12px;text-align:left;border:1px solid var(--border)">推荐编码</th><th style="padding:12px;text-align:left;border:1px solid var(--border)">理由</th></tr>
+    <tr><td style="padding:10px;border:1px solid var(--border)">微信 / 社交分享</td><td style="padding:10px;border:1px solid var(--border)"><strong>H.264</strong></td><td style="padding:10px;border:1px solid var(--border)">确保所有手机都能播放</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:10px;border:1px solid var(--border)">上传 B站 / YouTube</td><td style="padding:10px;border:1px solid var(--border)"><strong>H.265</strong> 或 H.264</td><td style="padding:10px;border:1px solid var(--border)">H.265 体积小上传快，H.264 转码快</td></tr>
+    <tr><td style="padding:10px;border:1px solid var(--border)">4K 视频存储</td><td style="padding:10px;border:1px solid var(--border)"><strong>H.265</strong></td><td style="padding:10px;border:1px solid var(--border)">比 H.264 省一半空间，硬解普及</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:10px;border:1px solid var(--border)">长期归档</td><td style="padding:10px;border:1px solid var(--border)"><strong>AV1</strong></td><td style="padding:10px;border:1px solid var(--border)">最小体积、免费、未来标准</td></tr>
+    <tr><td style="padding:10px;border:1px solid var(--border)">网站视频流</td><td style="padding:10px;border:1px solid var(--border)"><strong>AV1 + H.264</strong> 双份</td><td style="padding:10px;border:1px solid var(--border)">新设备用 AV1 省带宽，旧设备回退 H.264</td></tr>
+    <tr style="background:var(--bg-secondary)"><td style="padding:10px;border:1px solid var(--border)">视频编辑中间文件</td><td style="padding:10px;border:1px solid var(--border)"><strong>ProRes 或 DNxHD</strong></td><td style="padding:10px;border:1px solid var(--border)">专业剪辑用中间编码，非本文讨论范围</td></tr>
+  </table>
+
+  <h2>总结</h2>
+  <p><strong>H.264 是底线</strong>：任何时候不知道该用什么编码，就选 H.264，它永远不会让你尴尬。<br>
+  <strong>H.265 是最佳平衡</strong>：日常使用最实用，画质好体积小，现代设备兼容性够用。<br>
+  <strong>AV1 是未来</strong>：如果你的设备支持硬解，或者不介意慢一点编码换取更小的文件，AV1 是最优解。</p>
+  <p>编码选择没有"唯一正确答案"，根据你的目标设备、存储需求和发布渠道做权衡。希望这份指南能帮你做出明智的选择。</p>
+
+<section class="related-articles" style="margin-top:40px;padding:24px;background:var(--bg-secondary,#f0f4f8);border-radius:8px">
+<h3 style="margin-top:0">📖 相关文章</h3>
+<ul style="list-style:none;padding:0">
+<li style="margin:8px 0"><a href="/blog/how-to-find-m3u8.html">如何找到网页中的 M3U8 视频链接（开发者工具教程）</a></li>
+<li style="margin:8px 0"><a href="/blog/ts-to-mp4.html">TS 转 MP4 完整教程（FFmpeg 无损转换）</a></li>
+<li style="margin:8px 0"><a href="/blog/video-converter-tools-compared.html">视频格式转换工具横向对比</a></li>
+<li style="margin:8px 0"><a href="/blog/record-live-streaming-video.html">如何录制在线直播视频并保存到本地</a></li>
+</ul>
+</section>
+</main>
+
+<footer class="footer">
+  <ul class="footer-links">
+    <li><a href="/about.html">关于</a></li>
+    <li><a href="/privacy.html">隐私政策</a></li>
+    <li><a href="/terms.html">使用条款</a></li>
+    <li><a href="/contact.html">联系我们</a></li>
+  </ul>
+  <p>© 2026 M3U8在线工具</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "视频编码格式完全指南：H.264 vs H.265 vs AV1 怎么选",
+  "description": "H.264、H.265/HEVC、AV1、VP9 四种主流视频编码格式详解：画质、码率、兼容性对比，包含 FFmpeg 转码命令实战。",
+  "datePublished": "2026-05-23",
+  "dateModified": "2026-05-23",
+  "author": {"@type": "Organization", "name": "M3U8在线工具"},
+  "publisher": {"@type": "Organization", "name": "M3U8在线工具"}
+}
+</script>
+</body>
+</html>
