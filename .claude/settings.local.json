@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "Bash(npm --version)"
+      "Bash(npm --version)",
+      "Bash(curl *uumit.com*)",
+      "Bash(curl *oss.uumit.com*)",
+      "Bash(node *uumit*)",
+      "Bash(node *d:/uumit*)",
+      "Bash(mkdir *uumit*)",
+      "Bash(cd *uumit*)",
+      "Bash(test *)",
+      "Bash(ls *)",
+      "Bash(echo *)"
     ]
   }
 }

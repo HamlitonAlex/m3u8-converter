@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "uuagent": {
+      "url": "https://api.uumit.com/mcp/sse",
+      "transport": "sse",
+      "headers": {
+        "X-API-Key": "-X7kzgf-1KyFaXNwNRNEM4KWohxlbCwaxKKj6hxxDYRrQ1Zqqri3wYg3HJlcYgvG",
+        "X-Platform-User-Id": "feea1e95-1c36-4d01-988d-385d776f4817"
+      }
+    }
+  }
+}
