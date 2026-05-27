@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="用 FFmpeg 无损剪辑视频，不重新编码，几秒完成切割。详细讲解关键帧切割、精确裁剪、批量分割等实用命令，适合剪掉片头片尾和广告。">
+  <meta name="keywords" content="FFmpeg剪辑视频, ffmpeg无损切割, 视频裁剪, 视频分割, ffmpeg cut video, 不重新编码裁剪">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://m3u8tomp4.com.cn/blog/ffmpeg-cut-video-lossless.html">
+  <link rel="alternate" hreflang="zh" href="https://m3u8tomp4.com.cn/blog/ffmpeg-cut-video-lossless.html">
+  <link rel="alternate" hreflang="x-default" href="https://m3u8tomp4.com.cn/blog/ffmpeg-cut-video-lossless.html">
+  <meta property="og:title" content="FFmpeg 无损剪辑视频教程（不重新编码，秒级完成） | M3U8在线工具">
+  <meta property="og:description" content="用 FFmpeg 无损剪辑视频，不重新编码，几秒完成切割。详细讲解关键帧切割、精确裁剪。">
+  <meta property="og:url" content="https://m3u8tomp4.com.cn/blog/ffmpeg-cut-video-lossless.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="M3U8在线工具">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FFmpeg 无损剪辑视频教程（不重新编码，秒级完成）">
+  <meta name="twitter:description" content="用 FFmpeg 无损剪辑视频，不重新编码，几秒完成切割。">
+  <title>FFmpeg 无损剪辑视频教程（不重新编码，秒级完成） | M3U8在线工具</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>with(document)0[(getElementsByTagName("head")[0]||body).appendChild(createElement("script")).src="//cpro.baidustatic.com/cpro/ui/c.js"];</script>
+  <script>LA.init({id:"3PwcUWLRlOTQ9dMa",ck:"3PwcUWLRlOTQ9dMa"})</script></head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+    M3U8在线工具
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">首页</a></li>
+    <li><a href="/convert.html">在线转换</a></li>
+    <li><a href="/guide.html">使用教程</a></li>
+    <li><a href="/about.html">关于</a></li>
+    <li><a href="/contact.html">联系</a></li>
+  </ul>
+</nav>
+
+<main class="content-page container">
+  <h1>FFmpeg 无损剪辑视频教程（不重新编码，秒级完成）</h1>
+  <p style="color:var(--text-secondary)">发布：2026年5月26日 &nbsp;|&nbsp; 适用：Windows / Mac / Linux</p>
+
+  <h2>什么是"无损剪辑"？</h2>
+  <p>普通视频剪辑软件（如剪映、PR）在导出视频时，无论你改动多小，都会<strong>重新编码整段视频</strong>。一个 1GB 的视频，仅剪掉片头 10 秒，导出可能花 10 分钟，画质还可能有损失。</p>
+  <p>FFmpeg 的无损剪辑（Lossless Cut）原理是：<strong>不重新编码，只复制原始数据流</strong>，仅裁剪你需要的片段。速度极快——几十 GB 的视频几秒内完成，且画质与原片完全一致。</p>
+  <p>适用场景：</p>
+  <ul>
+    <li>剪掉视频片头片尾</li>
+    <li>删除中间广告片段</li>
+    <li>将长视频拆分成多个片段</li>
+    <li>从录播中提取精彩部分</li>
+  </ul>
+
+  <h2>基础无损切割命令</h2>
+  <h3>按起止时间剪切</h3>
+  <p>从一个视频中提取第 30 秒到第 5 分钟之间的内容：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -ss 00:00:30 -i "input.mp4" -to 00:05:00 -c copy "output.mp4"</code></pre>
+  <p><strong>参数说明：</strong></p>
+  <ul>
+    <li><code>-ss 00:00:30</code>：起始时间（第 30 秒开始）</li>
+    <li><code>-i</code>：输入文件</li>
+    <li><code>-to 00:05:00</code>：结束时间（到第 5 分钟停止）</li>
+    <li><code>-c copy</code>：<strong>关键参数</strong>——复制所有流而不重新编码</li>
+  </ul>
+
+  <h3>使用 -t 指定持续时长</h3>
+  <p>如果知道要截取的时长而非结束时间，用 <code>-t</code> 更方便：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -ss 00:00:30 -i "input.mp4" -t 00:04:30 -c copy "output.mp4"</code></pre>
+  <p>以上命令同样从第 30 秒开始，截取 4 分 30 秒的内容。</p>
+
+  <h2>-ss 放前面还是放后面？</h2>
+  <p><code>-ss</code> 放在 <code>-i</code> 前面（输入前定位）和后面（输出前定位）有本质区别：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code># 方式A：-ss 在 -i 前面（快速，基于关键帧，可能有偏差）
+ffmpeg -ss 00:01:00 -i "input.mp4" -to 00:03:00 -c copy "output.mp4"
+
+# 方式B：-ss 在 -i 后面（慢，但精确到帧）
+ffmpeg -i "input.mp4" -ss 00:01:00 -to 00:03:00 -c copy "output.mp4"</code></pre>
+  <ul>
+    <li><strong>方式 A</strong>：FFmpeg 先跳到最近的关键帧开始解码，<strong>速度极快</strong>，但起始位置可能偏移 1~5 秒（取决于关键帧间隔）</li>
+    <li><strong>方式 B</strong>：从开头解码到指定位置，起始位置<strong>精确</strong>，但速度较慢</li>
+  </ul>
+  <p>多数场景下，<strong>方式 A 就足够精确</strong>，尤其是剪片头片尾这种不要求帧级精度的情况。</p>
+
+  <h2>同时剪切多个片段</h2>
+  <p>如果你想保留第 1~3 分钟和第 8~10 分钟，删除中间的广告部分，可以分别执行两次命令。批量处理可用脚本：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code># Windows 批处理（保存为 cut.bat）
+@echo off
+ffmpeg -ss 00:01:00 -i "%~1" -to 00:03:00 -c copy "%~n1_part1.mp4"
+ffmpeg -ss 00:08:00 -i "%~1" -to 00:10:00 -c copy "%~n1_part2.mp4"
+echo 剪辑完成</code></pre>
+
+  <h2>按文件大小分割视频</h2>
+  <p>如果你需要将一个长视频按大小分成几段（例如上传到有大小限制的平台），可以用 segment 参数：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -i "input.mp4" -c copy -map 0 -segment_time 00:10:00 -f segment -reset_timestamps 1 "output_%03d.mp4"</code></pre>
+  <p>以上命令每 10 分钟切一段，生成 <code>output_001.mp4</code>、<code>output_002.mp4</code> 等文件。</p>
+
+  <h2>常见问题</h2>
+  <h3>剪切后开头几秒画面卡住？</h3>
+  <p>这是因为起始位置不在关键帧上。解决方法：<strong>将 <code>-ss</code> 放在 <code>-i</code> 之后</strong>（方式 B），或略微调整起始时间到上一个关键帧。</p>
+
+  <h3>剪切后音画不同步？</h3>
+  <p>部分视频的关键帧间隔不均匀。添加 <code>-avoid_negative_ts make_zero</code> 参数可修复此问题：</p>
+  <pre style="background:var(--bg-secondary);padding:16px;border-radius:8px;overflow-x:auto"><code>ffmpeg -ss 00:01:00 -i "input.mp4" -to 00:05:00 -c copy -avoid_negative_ts make_zero "output.mp4"</code></pre>
+
+  <h3>能用 FFmpeg 剪切 M3U8 下载的 TS 文件吗？</h3>
+  <p>完全可以。命令完全一样。如果 TS 文件是先合并再剪辑，建议先<a href="/blog/merge-ts-files.html">合并 TS 文件</a>再用本教程的方法剪切。</p>
+
+  <h3>到底损失画质吗？</h3>
+  <p>使用 <code>-c copy</code> 的剪切<strong>完全不损失画质</strong>。FFmpeg 只是把原始编码数据从输入文件复制到输出文件，中间不做任何编解码。唯一的小限制是：起始位置只能在关键帧上（方式 A），但画质本身没有变化。</p>
+
+  <p style="margin-top:32px"><a href="/convert.html"><strong>回到在线工具 →</strong></a></p>
+
+<div class="ad-container" style="margin:24px auto;max-width:728px;text-align:center;min-height:90px;background:var(--bg-secondary,#f8f9fa);border-radius:8px;display:flex;align-items:center;justify-content:center"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4373384297972533" data-ad-slot="3548176249" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+<section class="related-articles" style="margin-top:40px;padding:24px;background:var(--bg-secondary,#f0f4f8);border-radius:8px">
+<h3 style="margin-top:0">相关文章</h3>
+<ul style="list-style:none;padding:0">
+<li style="margin:8px 0"><a href="/blog/ts-to-mp4.html">TS 转 MP4 完整教程（FFmpeg 无损转换）</a></li>
+<li style="margin:8px 0"><a href="/blog/ffmpeg-batch-convert.html">FFmpeg 批量转换视频教程</a></li>
+<li style="margin:8px 0"><a href="/blog/merge-ts-files.html">如何合并 TS 文件</a></li>
+<li style="margin:8px 0"><a href="/blog/video-converter-tools-compared.html">视频格式转换工具横向对比（2026）</a></li>
+</ul>
+</section>
+</main>
+
+<footer class="footer">
+  <ul class="footer-links">
+    <li><a href="/about.html">关于</a></li>
+    <li><a href="/privacy.html">隐私政策</a></li>
+    <li><a href="/terms.html">使用条款</a></li>
+    <li><a href="/contact.html">联系我们</a></li>
+  </ul>
+  <p>&copy; 2026 M3U8在线工具</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "FFmpeg 无损剪辑视频教程（不重新编码，秒级完成）",
+  "description": "用 FFmpeg 无损剪辑视频，不重新编码，几秒完成切割。详细讲解关键帧切割、精确裁剪、批量分割等实用命令。",
+  "datePublished": "2026-05-26",
+  "author": {"@type": "Organization", "name": "M3U8在线工具"}
+}
+</script>
+</body>
+</html>
