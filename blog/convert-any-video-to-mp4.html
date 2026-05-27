@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MKV/WebM/TS/AVI/FLV 等各种视频格式转 MP4 的完整教程。用 FFmpeg、HandBrake、在线工具一键转换，免费无损。解决播放器不兼容问题。">
+  <meta name="keywords" content="格式转MP4, MKV转MP4, WebM转MP4, TS转MP4, MKV转MP4在线, 视频格式转换, ffmpeg转mp4, 视频转mp4免费">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://m3u8tomp4.com.cn/blog/convert-any-video-to-mp4.html">
+  <link rel="alternate" hreflang="zh" href="https://m3u8tomp4.com.cn/blog/convert-any-video-to-mp4.html">
+  <link rel="alternate" hreflang="x-default" href="https://m3u8tomp4.com.cn/blog/convert-any-video-to-mp4.html">
+  <meta property="og:title" content="视频格式转MP4全攻略：MKV/WebM/TS/AVI 免费转换 | M3U8 Player">
+  <meta property="og:description" content="MKV、WebM、TS、AVI 等各种视频格式转 MP4 的完整教程。用 FFmpeg、HandBrake、在线工具一键转换，免费无损。">
+  <meta property="og:url" content="https://m3u8tomp4.com.cn/blog/convert-any-video-to-mp4.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="M3U8 Player">
+  <meta property="og:image" content="https://m3u8tomp4.com.cn/blog/images/m3u8-to-mp4-flow.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://m3u8tomp4.com.cn/blog/images/m3u8-to-mp4-flow.svg">
+  <title>视频格式转MP4全攻略：MKV/WebM/TS/AVI 免费转换 | M3U8 Player</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="blog-visuals.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎬</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4373384297972533" crossorigin="anonymous"></script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"3PwcUWLRlOTQ9dMa",ck:"3PwcUWLRlOTQ9dMa"})</script>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+    M3U8 Player
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">首页</a></li>
+    <li><a href="/convert.html">在线转换</a></li>
+    <li><a href="/blog/">文章</a></li>
+    <li><a href="/guide.html">教程</a></li>
+    <li><a href="/about.html">关于</a></li>
+  </ul>
+</nav>
+
+<main class="content-page container">
+  <h1>视频格式转 MP4 全攻略：MKV/WebM/TS/AVI 免费转换</h1>
+  <p style="color:var(--text-secondary)">2026年5月 &nbsp;|&nbsp; 阅读: 7 分钟</p>
+
+  <div class="info-box">
+    <strong>一句话结论：</strong>几乎所有视频格式转 MP4，用 FFmpeg 一条命令搞定：<code>ffmpeg -i input.xxx -c copy output.mp4</code>。如果遇到编码不兼容（比如 WebM 的 VP9 编码），才需要重编码。不想装软件？用在线工具也行。
+  </div>
+
+  <h2>为什么要转成 MP4？</h2>
+  <p>MP4 是目前兼容性最好的视频格式，基本上"能开机就能播"。但很多视频来源用的是其他格式：</p>
+  <ul>
+    <li><strong>MKV：</strong>高清电影、蓝光原盘的常用封装格式。功能强大但手机和电视不一定支持</li>
+    <li><strong>WebM：</strong>网页视频的默认格式（YouTube 在用），但很多播放器和剪辑软件不认</li>
+    <li><strong>TS：</strong>HLS 流媒体的分片格式，录屏和 M3U8 下载后经常得到 .ts 文件</li>
+    <li><strong>AVI：</strong>上古格式了，但老设备录像还在用，很多新播放器已经抛弃</li>
+    <li><strong>FLV：</strong>Flash 时代的残留格式，现在基本没东西能直接播了</li>
+    <li><strong>MOV：</strong>苹果的 QuickTime 格式，Windows 和 Android 兼容性差</li>
+  </ul>
+
+  <h2>各格式转 MP4 速查表</h2>
+  <table class="compare-table">
+    <tr><th>源格式</th><th>典型编码</th><th>能无损转吗？</th><th>推荐方法</th></tr>
+    <tr><td>MKV</td><td>H.264/H.265</td><td style="color:#10b981">✅ 能</td><td>FFmpeg -c copy</td></tr>
+    <tr><td>TS</td><td>H.264</td><td style="color:#10b981">✅ 能</td><td>FFmpeg -c copy 或 <a href="/convert.html">在线工具</a></td></tr>
+    <tr><td>MOV</td><td>H.264/ProRes</td><td style="color:#f59e0b">⚠️ 取决于编码</td><td>H.264 可无损，ProRes 需重编码</td></tr>
+    <tr><td>WebM</td><td>VP8/VP9</td><td style="color:#ef4444">❌ 不能</td><td>必须重编码为 H.264/H.265</td></tr>
+    <tr><td>AVI</td><td>DivX/XviD</td><td style="color:#ef4444">❌ 不能</td><td>必须重编码</td></tr>
+    <tr><td>FLV</td><td>H.264/Sorenson</td><td style="color:#f59e0b">⚠️ H.264 可无损</td><td>取决于内部编码</td></tr>
+  </table>
+
+  <h2>方法一：FFmpeg 命令行（万能方案）</h2>
+  <p>FFmpeg 是格式转换的事实标准。以下命令覆盖了最常见的场景：</p>
+
+  <pre class="code-block"><span class="cm"># MKV → MP4（无损，H.264/H.265 编码适用）</span>
+ffmpeg -i video.mkv -c copy -movflags +faststart output.mp4
+
+<span class="cm"># TS → MP4（无损，仅改容器）</span>
+ffmpeg -i video.ts -c copy -bsf:a aac_adtstoasc output.mp4
+
+<span class="cm"># MOV → MP4（H.264 编码无损）</span>
+ffmpeg -i video.mov -c copy output.mp4
+
+<span class="cm"># FLV → MP4（H.264 + AAC 编码无损）</span>
+ffmpeg -i video.flv -c copy output.mp4
+
+<span class="cm"># ⚠️ WebM → MP4（VP9 不能无损，必须重编码）</span>
+ffmpeg -i video.webm -c:v libx264 -crf 22 -c:a aac -b:a 128k output.mp4
+
+<span class="cm"># ⚠️ 旧 AVI → MP4（必须重编码）</span>
+ffmpeg -i video.avi -c:v libx264 -crf 20 -c:a aac -b:a 128k output.mp4</pre>
+
+  <div class="info-box">
+    <strong>-c copy 的底层原理：</strong>视频文件由"容器"和"编码流"两部分组成。容器决定文件的扩展名（.mp4/.mkv），编码流决定画质和兼容性（H.264/H.265）。<code>-c copy</code> 是把编码流原封不动地从旧容器搬运到新容器——就像把衣服从一个箱子移到另一个箱子，衣服本身没任何变化。这就是为什么它"无损"且"秒速"。
+  </div>
+
+  <h2>方法二：HandBrake 图形界面（适合不敲命令行的）</h2>
+  <p>如果你不想敲命令，HandBrake 是最好的图形界面替代。操作非常简单：</p>
+  <ol>
+    <li>打开 HandBrake → 拖入视频文件</li>
+    <li>「Summary」标签 → Format 选 <strong>MP4</strong></li>
+    <li>「Video」标签 → 编码器选 H.264 或 H.265</li>
+    <li>点击顶部「Start Encode」</li>
+  </ol>
+  <p>HandBrake 会自动处理编码兼容性问题，不需要你判断什么时候该用 <code>-c copy</code> 什么时候该重编码。</p>
+
+  <h2>方法三：在线转换工具（零安装）</h2>
+  <p>如果你只需要偶尔转一两个小文件，在线工具是最方便的选择：</p>
+  <ul>
+    <li><strong>CloudConvert</strong> — 支持几乎所有格式互转，免费额度每天 25 分钟</li>
+    <li><strong>Convertio</strong> — 界面友好，支持大文件（免费 100MB）</li>
+    <li><strong>Zamzar</strong> — 老牌在线转换，稳定但免费版限制较多</li>
+  </ul>
+  <p>对于 M3U8/TS 转 MP4，用我们的 <a href="/convert.html">M3U8 在线转换工具</a> 更专业——不需要上传文件，浏览器端直接完成。</p>
+
+  <h2>各格式详细说明</h2>
+  <h3>MKV 转 MP4</h3>
+  <p>MKV 和 MP4 都是容器格式。大多数 MKV 文件内部用的是 H.264 或 H.265 编码——这种情况下直接用 <code>-c copy</code> 无损秒转。唯一需要注意的是：MKV 可能包含 ASS/SSA 字幕轨道（MP4 不支持），需要先提取字幕：</p>
+  <pre class="code-block">ffmpeg -i video.mkv -c copy -map 0:v:0 -map 0:a:0 output.mp4</pre>
+
+  <h3>WebM 转 MP4</h3>
+  <p>WebM 内部用的是 VP8/VP9 编码（Google 开源的），而 MP4 标准只支持 H.264/H.265。所以你<strong>必须重编码</strong>，没有无损捷径。视频质量会有轻微损失，但用 CRF 18-22 的参数，肉眼几乎看不出来。</p>
+
+  <h3>TS 转 MP4</h3>
+  <p>TS（MPEG Transport Stream）是最容易转 MP4 的格式——内部几乎总是 H.264 编码。一条 <code>-c copy</code> 秒转，或者用 <a href="/convert.html">在线 M3U8 转 MP4 工具</a> 直接下载就是 MP4。</p>
+
+  <h3>旧格式（AVI/FLV/WMV）转 MP4</h3>
+  <p>这些老格式通常使用 H.264 之前的编码（DivX、WMV 等），必须重编码。用 HandBrake 选 H.264 编码器即可。值得注意的是：旧视频分辨率通常很低（480p 甚至更低），重编码到 H.264 后体积会大幅减小（因为新编码压缩率更高）。</p>
+
+  <h2>常见问题</h2>
+  <h3>转换后有画面没声音 / 有声音没画面？</h3>
+  <p>通常是音频编码不兼容的问题。加上 <code>-c:a aac -b:a 128k</code> 强制音频重编码为 AAC 即可解决。</p>
+
+  <h3>转换后文件反而变大了？</h3>
+  <p>这说明你用 <code>-c copy</code> 时源文件的编码本来效率就很低。改用重编码（<code>-c:v libx264 -crf 22</code>）来压缩。</p>
+
+  <h3>批量转换多个文件？</h3>
+  <p>Windows 用批处理脚本，Mac/Linux 用 bash 循环。详见 <a href="ffmpeg-batch-convert.html">FFmpeg 批量转换教程</a>。</p>
+
+  <p style="margin-top:32px;text-align:center">
+    <a href="/convert.html" style="display:inline-block;background:var(--accent,#0ea5e9);color:#fff;padding:14px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.1rem">在线 M3U8/TS 转 MP4 →</a>
+  </p>
+</main>
+
+<footer class="footer">
+  <ul class="footer-links">
+    <li><a href="/about.html">关于</a></li>
+    <li><a href="/privacy.html">隐私政策</a></li>
+    <li><a href="/terms.html">使用条款</a></li>
+    <li><a href="/contact.html">联系我们</a></li>
+  </ul>
+  <p>© 2026 M3U8 Online Player</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "视频格式转MP4全攻略：MKV/WebM/TS/AVI 免费转换",
+  "description": "MKV、WebM、TS、AVI、MOV、FLV 等各种视频格式转 MP4 的完整教程。用 FFmpeg、HandBrake、在线工具一键转换，免费无损。",
+  "datePublished": "2026-05-28",
+  "author": {"@type": "Organization", "name": "M3U8 Player"}
+}
+</script>
+</body>
+</html>
