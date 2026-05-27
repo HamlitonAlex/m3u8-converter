@@ -1,14 +1,3 @@
 {
-  "tasks": [
-    {
-      "id": "983076fa",
-      "cron": "37 10 * * 3,6",
-      "prompt": "写两篇 SEO 优化的中文教程文章，发布到 c:/Users/Alex/Desktop/网站建站/blog/ 目录下。\n\n要求：\n1. 每篇 800-1200 字，原创实用内容\n2. 主题围绕：M3U8、视频下载、FFmpeg 教程、格式转换、在线视频工具等\n3. SEO 优化：含 meta description、keywords、JSON-LD Article schema、h2/h3 标题层级\n4. HTML 格式，复用 ../css/style.css，结构与 blog/ts-to-mp4.html 一致（navbar + content-page + footer）\n5. 文件名英文小写连字符，如 blog/ffmpeg-batch-convert.html\n6. 写完后更新 sitemap.xml 加入新页面\n7. 用 npx wrangler pages deploy . --project-name m3u8tomp4 --commit-dirty=true 部署\n8. 最后 git add -A && git commit -m \"weekly articles\" && git push\n\n文章主题建议（可自行发挥）：\n- FFmpeg 批量转换视频教程\n- 如何下载网页嵌入视频（多种方法）\n- M3U8/HLS 流媒体协议科普\n- 视频格式转换工具横向对比\n- 如何提取在线视频的音频\n- 手机上下载在线视频的方法",
-      "createdAt": 1778981293155,
-      "lastFiredAt": 1779505857220,
-      "recurring": true,
-      "createdBySessionId": "e98d8f6a-a1dd-426a-937b-a7d92c3f6c32",
-      "createdByPid": 6044
-    }
-  ]
+  "tasks": []
 }
