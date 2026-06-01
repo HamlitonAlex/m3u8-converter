@@ -7,3 +7,7 @@ fc-proxy.zip
 .idea/
 *.code-workspace
 .env
+feishu-bot/
+garden-gpt-image-2/
+screenshots/
+*.zip
