@@ -6,3 +6,4 @@ fc-proxy.zip
 .wrangler/
 .idea/
 *.code-workspace
+.env
